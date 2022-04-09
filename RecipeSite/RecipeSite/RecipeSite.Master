@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RecipeSite.Master.cs" Inherits="RecipeSite.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
+            <h1>Recipe Site</h1>
+        </div>
+        <div id="navbar" style="border-color: black; border-style: solid; padding: 1px; line-height: 200%; margin-bottom: 1px; display: block;">
+            <a href="HomePage.aspx">Home</a>
+            <a href="">Recipes</a>
+            <a href="">About</a>
+            <a href="">FAQ</a>
+            <a href="">Login</a>
+            <a href="SignUp.aspx">Sign Up</a>
+
+        </div>
+        <div id="content" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+            </div>
+    </form>
+</body>
+</html>
