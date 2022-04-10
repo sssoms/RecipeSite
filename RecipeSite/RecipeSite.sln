@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeSite", "RecipeSite\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{C45DF6E5-87B3-4341-A3AA-5A44392A42FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeSiteLibrary", "RecipeSiteLibrary\RecipeSiteLibrary.csproj", "{6228F843-610B-4385-82E9-50F46FC611D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C45DF6E5-87B3-4341-A3AA-5A44392A42FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C45DF6E5-87B3-4341-A3AA-5A44392A42FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C45DF6E5-87B3-4341-A3AA-5A44392A42FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6228F843-610B-4385-82E9-50F46FC611D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6228F843-610B-4385-82E9-50F46FC611D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6228F843-610B-4385-82E9-50F46FC611D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6228F843-610B-4385-82E9-50F46FC611D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
