@@ -7,15 +7,13 @@
         <h1>Sign Up
         </h1>
         <div>
+            <asp:Label runat="server" ID="lblMessage"></asp:Label>
+                <br />
             Username
             <asp:TextBox runat="server" ID="txtUsername"></asp:TextBox>
             <br />
             Password
-            <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
-            <br />
-            Confirm Password
-            <asp:TextBox runat="server" ID="txtPasswordConfirm"></asp:TextBox>
-            
+            <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>            
             <br />
             Email
             <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
@@ -34,6 +32,7 @@
             <br />
             State 
             <asp:DropDownList ID="DropDownListState" runat="server">
+                <asp:ListItem Value="NN">Unselected</asp:ListItem>
                 <asp:ListItem Value="AL">Alabama</asp:ListItem>
                 <asp:ListItem Value="AK">Alaska</asp:ListItem>
                 <asp:ListItem Value="AZ">Arizona</asp:ListItem>
