@@ -73,6 +73,7 @@
     <Content Include="LogIn.aspx" />
     <Content Include="MyIngredientsListPage.aspx" />
     <Content Include="RecipePage.aspx" />
+    <Content Include="Search.aspx" />
     <Content Include="SendEmail.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="NavStyleSheet.css" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="RecipeSite.Master.designer.cs">
       <DependentUpon>RecipeSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="SendEmail.aspx.cs">
       <DependentUpon>SendEmail.aspx</DependentUpon>
