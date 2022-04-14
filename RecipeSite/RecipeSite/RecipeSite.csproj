@@ -67,13 +67,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FavoritesPage.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Images\NoImage.jpeg" />
     <Content Include="LogIn.aspx" />
+    <Content Include="MyIngredientsListPage.aspx" />
+    <Content Include="RecipePage.aspx" />
     <Content Include="SendEmail.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="NavStyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FavoritesPage.aspx.cs">
+      <DependentUpon>FavoritesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavoritesPage.aspx.designer.cs">
+      <DependentUpon>FavoritesPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,7 +100,21 @@
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyIngredientsListPage.aspx.cs">
+      <DependentUpon>MyIngredientsListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyIngredientsListPage.aspx.designer.cs">
+      <DependentUpon>MyIngredientsListPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipePage.aspx.cs">
+      <DependentUpon>RecipePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipePage.aspx.designer.cs">
+      <DependentUpon>RecipePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecipeSite.Master.cs">
       <DependentUpon>RecipeSite.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +153,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
