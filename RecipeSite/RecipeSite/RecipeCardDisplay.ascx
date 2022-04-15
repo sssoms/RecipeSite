@@ -29,6 +29,6 @@
         </td>
     </tr>
 </table>
-<asp:Button ID="btnDetails" runat="server" Text="Click For Details" />
+<asp:Button ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" />
 
 

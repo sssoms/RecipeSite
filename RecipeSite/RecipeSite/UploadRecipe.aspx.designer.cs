@@ -15,6 +15,15 @@ namespace RecipeSite
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// txtRecipeName control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,33 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRecipeName;
+
+        /// <summary>
+        /// valRecipeName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRecipeName;
+
+        /// <summary>
+        /// recipePictureUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload recipePictureUpload;
+
+        /// <summary>
+        /// valRecipePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRecipePicture;
 
         /// <summary>
         /// ddlMainIngredient control.
@@ -51,22 +87,31 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.DropDownList ddlFoodCategory;
 
         /// <summary>
-        /// txtServings control.
+        /// ddlServing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtServings;
+        protected global::System.Web.UI.WebControls.DropDownList ddlServing;
 
         /// <summary>
-        /// txtCookingTime control.
+        /// ddlCookingTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCookingTime;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCookingTime;
+
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
         /// ddlIngredient1 control.
@@ -78,6 +123,15 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient1;
 
         /// <summary>
+        /// btnAddIngredient2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient2;
+
+        /// <summary>
         /// ddlIngredient2 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +139,15 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient2;
+
+        /// <summary>
+        /// btnAddIngredient3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient3;
 
         /// <summary>
         /// ddlIngredient3 control.
@@ -96,6 +159,15 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient3;
 
         /// <summary>
+        /// btnAddIngredient4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient4;
+
+        /// <summary>
         /// ddlIngredient4 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +175,15 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient4;
+
+        /// <summary>
+        /// btnAddIngredient5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient5;
 
         /// <summary>
         /// ddlIngredient5 control.
@@ -114,6 +195,15 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient5;
 
         /// <summary>
+        /// btnAddIngredient6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient6;
+
+        /// <summary>
         /// ddlIngredient6 control.
         /// </summary>
         /// <remarks>
@@ -123,6 +213,15 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient6;
 
         /// <summary>
+        /// btnAddIngredient7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient7;
+
+        /// <summary>
         /// ddlIngredient7 control.
         /// </summary>
         /// <remarks>
@@ -130,6 +229,15 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredient7;
+
+        /// <summary>
+        /// btnAddIngredient8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddIngredient8;
 
         /// <summary>
         /// ddlIngredient8 control.
@@ -148,6 +256,15 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtInstruction1;
+
+        /// <summary>
+        /// valInstruction1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valInstruction1;
 
         /// <summary>
         /// txtInstruction2 control.
@@ -229,5 +346,32 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtInstruction10;
+
+        /// <summary>
+        /// btnSaveDraft control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveDraft;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

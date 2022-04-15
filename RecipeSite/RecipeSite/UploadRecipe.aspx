@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <h2>Add Your Recipe</h2>
         <table>
             <tr>
@@ -12,6 +13,16 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtRecipeName" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="valRecipeName" ControlToValidate ="txtRecipeName" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Upload Picture
+                </td>
+                <td>
+                    <asp:FileUpload ID="recipePictureUpload" runat="server" Width="188px" />
+                    <asp:RequiredFieldValidator ID="valRecipePicture" ControlToValidate="recipePictureUpload" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -43,7 +54,18 @@
                     Servings
                 </td>
                 <td>
-                    <asp:TextBox ID="txtServings" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="ddlServing" runat="server">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -51,22 +73,35 @@
                     Cooking Time
                 </td>
                 <td>
-                    <asp:TextBox ID="txtCookingTime" runat="server"></asp:TextBox>min
+                    <asp:DropDownList ID="ddlCookingTime" runat="server"></asp:DropDownList>
+                    min
                 </td>
             </tr>
             <tr>
+                
                 <td>
                     Ingredients
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlIngredient1" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient2" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient3" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient4" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient5" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient6" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient7" runat="server"></asp:DropDownList><br />
-                    <asp:DropDownList ID="ddlIngredient8" runat="server"></asp:DropDownList>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList ID="ddlIngredient1" runat="server"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient2" runat="server" Text="Add" OnClick="btnAddIngredient2_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient2" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient3" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient3_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient3" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient4" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient4_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient4" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient5" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient5_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient5" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient6" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient6_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient6" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient7" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient7_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient7" runat="server" Enabled="False" Visible="False"></asp:DropDownList><br />
+                            <asp:Button ID="btnAddIngredient8" runat="server" Text="Add" Visible="False" OnClick="btnAddIngredient8_Click" CausesValidation="False" />
+                            <asp:DropDownList ID="ddlIngredient8" runat="server" Enabled="False" Visible="False"></asp:DropDownList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </td>
             </tr>
             <tr>
@@ -74,7 +109,8 @@
                     Instructions
                 </td>
                 <td>
-                    <asp:TextBox ID="txtInstruction1" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="txtInstruction1" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="valInstruction1" ControlToValidate="txtInstruction1" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator><br />
                     <asp:TextBox ID="txtInstruction2" runat="server"></asp:TextBox><br />
                     <asp:TextBox ID="txtInstruction3" runat="server"></asp:TextBox><br />
                     <asp:TextBox ID="txtInstruction4" runat="server"></asp:TextBox><br />
@@ -87,5 +123,8 @@
                 </td>
             </tr>
         </table>
+        <asp:Button ID="btnSaveDraft" runat="server" Text="Save Draft" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+        <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
     </div>
 </asp:Content>

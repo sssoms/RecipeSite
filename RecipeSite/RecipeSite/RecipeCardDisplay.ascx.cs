@@ -39,5 +39,10 @@ namespace RecipeSite
             lblCookingMethod.Text = (String)myDS.Tables[0].Rows[0]["CookingMethod"];
             lblFoodCategory.Text = (String)myDS.Tables[0].Rows[0]["Category"];
         }
+
+        protected void btnDetails_Click(object sender, EventArgs e)
+        {
+            //redirect to RecipePage.aspx
+        }
     }
 }

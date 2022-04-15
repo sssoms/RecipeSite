@@ -5,8 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <h3>Find a Recipe</h3><br />
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>

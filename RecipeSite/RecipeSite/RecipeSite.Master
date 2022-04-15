@@ -24,8 +24,8 @@
                 <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="/COA">Upload Recipe Page</a>
-                    <a href="/Onlinerecpt">My Recipe Page</a>
+                    <a href="UploadRecipe.aspx">Upload Recipe Page</a>
+                    <a href="MyRecipes.aspx">My Recipe Page</a>
                     <a href="FavoritesPage.aspx">Favorites</a>
                     <a href="MyIngredientsListPage.aspx">My Ingredients list</a>
                 </div>
