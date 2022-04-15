@@ -15,7 +15,7 @@
                             </td>
                             <td>
                                 <asp:DropDownList ID="ddlSearchBy" runat="server" OnSelectedIndexChanged="ddlSearchBy_SelectedIndexChanged" AutoPostBack="True">
-                                    <asp:ListItem Selected="True">Select</asp:ListItem>
+                                    <asp:ListItem>Select</asp:ListItem>
                                     <asp:ListItem>Main Ingredient</asp:ListItem>
                                     <asp:ListItem>Cooking Method</asp:ListItem>
                                     <asp:ListItem>Food Category</asp:ListItem>
@@ -27,7 +27,7 @@
                                 <asp:Label ID="lblSelectedSearchBy" runat="server" Text=""></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server" OnSelectedIndexChanged="ddlSelectedSearchBy_SelectedIndexChanged"></asp:DropDownList>
                             </td>
                         </tr>
                     </table>
