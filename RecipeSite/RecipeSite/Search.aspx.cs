@@ -38,17 +38,14 @@ namespace RecipeSite
             ddlSelectedSearchBy.DataTextField = ddlDS.Tables[0].Columns[0].ToString();
             ddlSelectedSearchBy.DataBind();
         }
-        protected void ddlSelectedSearchBy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             //lblSelectedSearchBy.Text = ddlSearchBy.SelectedValue;
             DataSet recipeDS = GetRecipeDataSet(ddlSearchBy.SelectedValue, ddlSelectedSearchBy.SelectedValue);
-            int count = 0;
+            int count = recipeDS.Tables[0].Rows.Count;
 
-            for (int recordNum = 0; recordNum <count; recordNum++)
+            for (int recordNum = 0; recordNum < count; recordNum++)
             {
                 //register the ASCX control 
                 RecipeCardDisplay ctrl = (RecipeCardDisplay)LoadControl("RecipeCardDisplay.ascx");
@@ -97,7 +94,7 @@ namespace RecipeSite
                     myDS = objDB.GetDataSet(objCommand);
                     break;
                 case "Cooking Method":
-                    objCommand.CommandText = "TP_SearchByFoodCategories";
+                    objCommand.CommandText = "TP_SearchByCookingMethod";
                     myDS = objDB.GetDataSet(objCommand);
                     break;
                 case "Food Category":

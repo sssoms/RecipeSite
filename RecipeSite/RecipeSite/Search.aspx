@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/RecipeSite.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="RecipeSite.Search" %>
 
+<%@ Register Src ="RecipeCardDisplay.ascx" TagName="RecipeCardDisplay" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
@@ -27,12 +29,12 @@
                                 <asp:Label ID="lblSelectedSearchBy" runat="server" Text=""></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server" OnSelectedIndexChanged="ddlSelectedSearchBy_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server"></asp:DropDownList>
                             </td>
                         </tr>
                     </table>
                 </ContentTemplate>  
-           </asp:UpdatePanel>
+            </asp:UpdatePanel>
             <br />
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         </div>

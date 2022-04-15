@@ -72,12 +72,14 @@
     <Content Include="Images\NoImage.jpeg" />
     <Content Include="LogIn.aspx" />
     <Content Include="MyIngredientsListPage.aspx" />
+    <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
     <Content Include="RecipePage.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="SendEmail.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="NavStyleSheet.css" />
+    <Content Include="UploadRecipe.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +110,13 @@
     </Compile>
     <Compile Include="MyIngredientsListPage.aspx.designer.cs">
       <DependentUpon>MyIngredientsListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyRecipes.aspx.cs">
+      <DependentUpon>MyRecipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyRecipes.aspx.designer.cs">
+      <DependentUpon>MyRecipes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecipeCardDisplay.ascx.cs">
@@ -151,6 +160,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadRecipe.aspx.cs">
+      <DependentUpon>UploadRecipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadRecipe.aspx.designer.cs">
+      <DependentUpon>UploadRecipe.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
