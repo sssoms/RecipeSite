@@ -19,3 +19,23 @@ C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\net
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.dll
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.pdb
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.genruntimeconfig.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\RecipeWepAPI.deps.json
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\RecipeWepAPI.runtimeconfig.json
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\RecipeWepAPI.runtimeconfig.dev.json
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\RecipeWepAPI.dll
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\RecipeWepAPI.pdb
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\Utilities.dll
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\bin\Debug\netcoreapp2.2\Utilities.pdb
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.csprojAssemblyReference.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.AssemblyInfoInputs.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.AssemblyInfo.cs
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.csproj.CoreCompileInputs.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.RazorAssemblyInfo.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.RazorAssemblyInfo.cs
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.RazorTargetAssemblyInfo.cache
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.csproj.CopyComplete
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.dll
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.pdb
+C:\Users\My PC\RecipeSite\RecipeSite\RecipeWepAPI\obj\Debug\netcoreapp2.2\RecipeWepAPI.genruntimeconfig.cache

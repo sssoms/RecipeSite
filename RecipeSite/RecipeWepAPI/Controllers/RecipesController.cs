@@ -106,7 +106,7 @@ namespace RecipeWepAPI.Controllers
                 recipe.Instruction9 = (String)myDS.Tables[0].Rows[0]["Instruction9"];
                 recipe.Instruction10 = (String)myDS.Tables[0].Rows[0]["Instruction10"];
 
-                if(myDS.Tables[0].Rows[0]["Ingredient1"] != null)
+                if (myDS.Tables[0].Rows[0]["Ingredient1"] != null)
                     recipe.Ingredient1 = (String)myDS.Tables[0].Rows[0]["Ingredient1"];
                 if (myDS.Tables[0].Rows[0]["Ingredient2"] != null)
                     recipe.Ingredient2 = (String)myDS.Tables[0].Rows[0]["Ingredient2"];
@@ -139,7 +139,7 @@ namespace RecipeWepAPI.Controllers
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_GetRecipeIDByUserID";
             objCommand.Parameters.AddWithValue("@UserID", userID);
-            
+
             myDS = objDB.GetDataSet(objCommand);
             int count = myDS.Tables[0].Rows.Count;
 
@@ -149,5 +149,45 @@ namespace RecipeWepAPI.Controllers
             }
             return recipeIDList;
         }
+
+        // method add ingredients to user's ingredient list
+        [HttpPost("AddIngredientToUser/{userID}/{ingredient}")]
+        public void  AddIngredientToUser(int userID, int ingredientID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objcommand = new SqlCommand();
+
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_AddIngredient";
+            objcommand.Parameters.AddWithValue("@UserID", userID);
+            objcommand.Parameters.AddWithValue("@IngredientID", ingredientID);
+        }
+
+        //method to add recipe to favorite list
+        [HttpPost("AddRecipeToFavorite/{userID}/{RecipeID}")]
+        public void AddRecipeToFavorite(int userID, int RecipeID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objcommand = new SqlCommand();
+
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_AddRecipeFromFavorite";
+
+        }
+
+        //method to remove recipe from favorite list
+        [HttpPost("RemoveRecipeFromFavorite/{userID}/{RecipeID}")]
+        public void RemoveRecipeFromFavorite(int userID, int RecipeID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objcommand = new SqlCommand();
+
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_RemoveRecipeFromFavorite";
+        }
+
+
+
+
     }
 }

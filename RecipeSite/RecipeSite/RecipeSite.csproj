@@ -82,6 +82,7 @@
     <Content Include="NavStyleSheet.css" />
     <Content Include="UploadRecipe.aspx" />
     <Content Include="Web.config" />
+    <Content Include="ReviewCardDisplay.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EditRecipe.aspx.cs">
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="UploadRecipe.aspx.designer.cs">
       <DependentUpon>UploadRecipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewCardDisplay.ascx.cs">
+      <DependentUpon>ReviewCardDisplay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewCardDisplay.ascx.designer.cs">
+      <DependentUpon>ReviewCardDisplay.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
