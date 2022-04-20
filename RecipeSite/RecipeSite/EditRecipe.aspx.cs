@@ -82,17 +82,6 @@ namespace RecipeSite
             PutIngredientToDDL(ddlIngredient7, "Ingredient7", myDS);
             PutIngredientToDDL(ddlIngredient8, "Ingredient8", myDS);
 
-            /*
-            ddlIngredient1.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient1"];
-            ddlIngredient2.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient2"];
-            ddlIngredient3.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient3"];
-            ddlIngredient4.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient4"];
-            ddlIngredient5.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient5"];
-            ddlIngredient6.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient6"];
-            ddlIngredient7.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient7"];
-            ddlIngredient8.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient8"];
-            */
-
             txtInstruction1.Text = (String)myDS.Tables[0].Rows[0]["Instruction1"];
             txtInstruction2.Text = (String)myDS.Tables[0].Rows[0]["Instruction2"];
             txtInstruction3.Text = (String)myDS.Tables[0].Rows[0]["Instruction3"];

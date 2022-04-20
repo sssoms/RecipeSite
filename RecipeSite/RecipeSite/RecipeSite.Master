@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="NavStyleSheet.css">  
 </head>
+<style>
+    .imgRecipe {
+        max-width: 100%;
+        height: auto;
+    }
+    .imgContainer {
+        width: 15rem;
+    }
+</style>
 <body>
     <form id="form1" runat="server">
         <div id="header" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
@@ -18,6 +27,10 @@
         <div class="topnav"  id="myTopnav" style="border-color: black; border-style: solid; padding: 1px; line-height: 200%; display: block;">
 
             <a href="HomePage.aspx">Home</a>
+            
+            <a href="Search.aspx">About</a>
+            <a href="">About</a>
+            <a href="">FAQ</a>
             <div class="dropdown">
                 <button class="dropbtn">
                     Personal Page
@@ -30,8 +43,6 @@
                     <a href="MyIngredientsListPage.aspx">My Ingredients list</a>
                 </div>
             </div>
-            <a href="">About</a>
-            <a href="">FAQ</a>
             <a href="LogIn.aspx">Login</a>          
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="OpenClose()">&#9776;</a>
 
