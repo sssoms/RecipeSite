@@ -35,6 +35,7 @@ namespace RecipeSite
             myDS = objDB.GetDataSet(objCommand);
 
             lblName.Text = (String)myDS.Tables[0].Rows[0]["RecipeName"];
+            imgRecipe.ImageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])myDS.Tables[0].Rows[0]["Picture"]);
             lblMainIngredient.Text = (String)myDS.Tables[0].Rows[0]["MainIngredient"];
             lblCookingMethod.Text = (String)myDS.Tables[0].Rows[0]["CookingMethod"];
             lblFoodCategory.Text = (String)myDS.Tables[0].Rows[0]["Category"];

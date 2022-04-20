@@ -31,7 +31,7 @@ namespace RecipeSite
                 {
                     RecipeCardDisplay ctrl = (RecipeCardDisplay)LoadControl("RecipeCardDisplay.ascx");
 
-                    ctrl.RecipeID = Convert.ToInt32(myRecipeDS.Tables[0].Rows[0]["RecipeID"]);
+                    ctrl.RecipeID = Convert.ToInt32(myRecipeDS.Tables[0].Rows[recordNum]["RecipeID"]);
                     ctrl.DataBind();
 
                     Page.Master.FindControl("ContentPlaceHolder1").Controls.Add(ctrl);

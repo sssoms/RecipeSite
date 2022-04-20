@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/RecipeSite.Master" AutoEventWireup="true" CodeBehind="UploadRecipe.aspx.cs" Inherits="RecipeSite.UploadRecipe" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/RecipeSite.Master" AutoEventWireup="true" CodeBehind="EditRecipe.aspx.cs" Inherits="RecipeSite.EditRecipe" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -22,7 +22,6 @@
                 </td>
                 <td>
                     <asp:FileUpload ID="fulRecipeImg" runat="server" Width="188px" />
-                    <asp:RequiredFieldValidator ID="valRecipeImg" ControlToValidate="fulRecipeImg" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblImgError" runat="server" Font-Size="Small" ForeColor="Red" Text="*Supported image formats: .jpg, .jpeg" Visible="False"></asp:Label>
                 </td>
             </tr>
@@ -117,7 +116,6 @@
                 </td>
             </tr>
         </table>
-        <asp:Button ID="btnSaveDraft" runat="server" Text="Save Draft" />
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
         <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
     </div>

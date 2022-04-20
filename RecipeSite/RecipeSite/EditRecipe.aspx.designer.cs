@@ -11,7 +11,7 @@ namespace RecipeSite
 {
 
 
-    public partial class UploadRecipe
+    public partial class EditRecipe
     {
 
         /// <summary>
@@ -49,15 +49,6 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fulRecipeImg;
-
-        /// <summary>
-        /// valRecipeImg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRecipeImg;
 
         /// <summary>
         /// lblImgError control.
@@ -292,15 +283,6 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtInstruction10;
-
-        /// <summary>
-        /// btnSaveDraft control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveDraft;
 
         /// <summary>
         /// btnSubmit control.

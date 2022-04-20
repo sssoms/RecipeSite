@@ -1,9 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RecipeCardDisplay.ascx.cs" Inherits="RecipeSite.RecipeCardDisplay" %>
 <asp:Label ID="lblName" runat="server"></asp:Label>
 <br />
-<asp:Image ID="imgRecipe" runat="server" />
-<br />
-<table cellpaddin="6">
+<div class="imgContainer">
+    <asp:Image CssClass="imgRecipe" ID="imgRecipe" runat="server" />
+</div>
+<table cellpadding="6">
     <tr>
         <td>
             Main Ingredient
@@ -29,6 +30,6 @@
         </td>
     </tr>
 </table>
-<asp:Button ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" />
+<asp:Button ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" /><br /><br />
 
 

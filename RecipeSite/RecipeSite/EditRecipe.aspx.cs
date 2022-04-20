@@ -1,24 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
 
 namespace RecipeSite
 {
-    public partial class UploadRecipe : System.Web.UI.Page
+    public partial class EditRecipe : System.Web.UI.Page
     {
-        int userID, imgSize;
+        int userID, imgSize, recipeID;
         string fileExtension, imgName;
         byte[] imgData;
 
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
             userID = 1;//Convert.ToInt32(Session["UserID"]);
-            
-            if(!IsPostBack)
+            recipeID = 4; //Convert.ToInt32(Session["RecipeID"]);
+
+            if (!IsPostBack)
             {
                 ddlCookingTime.DataSource = Enumerable.Range(1, 120).ToList();
                 ddlCookingTime.DataBind();
@@ -33,16 +36,17 @@ namespace RecipeSite
                 BindDDL(ddlIngredient6);
                 BindDDL(ddlIngredient7);
                 BindDDL(ddlIngredient8);
+                GetRecipeData();
             }
-            
         }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             bool imgIsValid = RecipeImgExtIsValid();
 
             if (Page.IsValid && imgIsValid)
             {
-                UploadRecipeToDatabase();
+                UpdateRecipeToDatabase();
                 Response.Redirect("MyRecipes.aspx");
             }
             else
@@ -51,8 +55,81 @@ namespace RecipeSite
             }
         }
 
-        // upload new recipe
-        public void UploadRecipeToDatabase()
+        public void GetRecipeData()
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetRecipeByID";
+            objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
+            DataSet myDS;
+            myDS = objDB.GetDataSet(objCommand);
+
+            txtRecipeName.Text = (String)myDS.Tables[0].Rows[0]["RecipeName"];
+            ddlMainIngredient.SelectedValue = (String)myDS.Tables[0].Rows[0]["MainIngredient"];
+            ddlCookingMethod.SelectedValue = (String)myDS.Tables[0].Rows[0]["CookingMethod"];
+            ddlFoodCategory.SelectedValue = (String)myDS.Tables[0].Rows[0]["Category"];
+            ddlServing.SelectedValue = myDS.Tables[0].Rows[0]["Servings"].ToString();
+            ddlCookingTime.SelectedValue = myDS.Tables[0].Rows[0]["CookingTime"].ToString();
+            imgData = (byte[])myDS.Tables[0].Rows[0]["Picture"];
+
+            PutIngredientToDDL(ddlIngredient1, "Ingredient1", myDS);
+            PutIngredientToDDL(ddlIngredient2, "Ingredient2", myDS);
+            PutIngredientToDDL(ddlIngredient3, "Ingredient3", myDS);
+            PutIngredientToDDL(ddlIngredient4, "Ingredient4", myDS);
+            PutIngredientToDDL(ddlIngredient5, "Ingredient5", myDS);
+            PutIngredientToDDL(ddlIngredient6, "Ingredient6", myDS);
+            PutIngredientToDDL(ddlIngredient7, "Ingredient7", myDS);
+            PutIngredientToDDL(ddlIngredient8, "Ingredient8", myDS);
+
+            /*
+            ddlIngredient1.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient1"];
+            ddlIngredient2.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient2"];
+            ddlIngredient3.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient3"];
+            ddlIngredient4.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient4"];
+            ddlIngredient5.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient5"];
+            ddlIngredient6.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient6"];
+            ddlIngredient7.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient7"];
+            ddlIngredient8.SelectedValue = (String)myDS.Tables[0].Rows[0]["Ingredient8"];
+            */
+
+            txtInstruction1.Text = (String)myDS.Tables[0].Rows[0]["Instruction1"];
+            txtInstruction2.Text = (String)myDS.Tables[0].Rows[0]["Instruction2"];
+            txtInstruction3.Text = (String)myDS.Tables[0].Rows[0]["Instruction3"];
+            txtInstruction4.Text = (String)myDS.Tables[0].Rows[0]["Instruction4"];
+            txtInstruction5.Text = (String)myDS.Tables[0].Rows[0]["Instruction5"];
+            txtInstruction6.Text = (String)myDS.Tables[0].Rows[0]["Instruction6"];
+            txtInstruction7.Text = (String)myDS.Tables[0].Rows[0]["Instruction7"];
+            txtInstruction8.Text = (String)myDS.Tables[0].Rows[0]["Instruction8"];
+            txtInstruction9.Text = (String)myDS.Tables[0].Rows[0]["Instruction9"];
+            txtInstruction10.Text = (String)myDS.Tables[0].Rows[0]["Instruction10"];
+        }
+
+        // set the selected value of ingredient dropdown list
+        public void PutIngredientToDDL(DropDownList ddl, string ingrNum, DataSet myDS)
+        {
+            DropDownList ddlIngredient = ddl;
+            
+            // if ingredient data is null, set selected value as Select
+            if (myDS.Tables[0].Rows[0][ingrNum] is null)
+            {
+                ddlIngredient.SelectedValue = "Select";
+            }
+            
+            else
+            {
+                ddlIngredient.SelectedValue = myDS.Tables[0].Rows[0][ingrNum].ToString();
+            }
+        }
+
+        public void PutInstructionsToTextbox(TextBox textbox, string instNum, DataSet myDS)
+        {
+            TextBox txtInstruction = textbox;
+            textbox.Text = (String)myDS.Tables[0].Rows[0][instNum];
+        }
+
+        // update recipe 
+        public void UpdateRecipeToDatabase()
         {
             try
             {
@@ -60,9 +137,9 @@ namespace RecipeSite
                 SqlCommand objCommand = new SqlCommand();
 
                 objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_CreateNewRecipe";
+                objCommand.CommandText = "TP_EditRecipe";
 
-                objCommand.Parameters.AddWithValue("@UserID", userID);
+                objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
                 objCommand.Parameters.AddWithValue("@RecipeName", txtRecipeName.Text);
                 objCommand.Parameters.AddWithValue("@MainIngredient", ddlMainIngredient.SelectedValue);
                 objCommand.Parameters.AddWithValue("@CookingMethod", ddlCookingMethod.SelectedValue);
@@ -113,15 +190,16 @@ namespace RecipeSite
                 {
                     objCommand.Parameters.AddWithValue("@Ingredient8", ddlIngredient8.SelectedValue);
                 }
-                objDB.DoUpdate(objCommand);
+                int i = objDB.DoUpdate(objCommand);
+                lblError.Text = i.ToString();
             }
             catch (Exception ex)
             {
                 lblError.Text = "Error has occurred: " + ex.ToString();
             }
-        } 
+        }
 
-        // validate file extension
+        // validate fileupload
         public bool RecipeImgExtIsValid()
         {
             bool valid = false;
@@ -152,7 +230,7 @@ namespace RecipeSite
             }
             else
             {
-                lblError.Text = "there is no file";
+                valid = true;
                 return valid;
             }
         }
@@ -234,5 +312,6 @@ namespace RecipeSite
                 return null;
             }
         }
+
     }
 }

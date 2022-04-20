@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EditRecipe.aspx" />
     <Content Include="FavoritesPage.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Images\NoImage.jpeg" />
@@ -83,6 +84,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditRecipe.aspx.cs">
+      <DependentUpon>EditRecipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditRecipe.aspx.designer.cs">
+      <DependentUpon>EditRecipe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FavoritesPage.aspx.cs">
       <DependentUpon>FavoritesPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
