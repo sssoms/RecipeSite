@@ -12,3 +12,6 @@
         Area to post sample recipe.
     </div>
 </asp:Content>
+
+<asp:Content CssClass="recipeContainer"  ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>

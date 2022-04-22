@@ -4,6 +4,7 @@
 
 <html>
 <head runat="server">
+
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -11,20 +12,40 @@
     <link rel="stylesheet" href="NavStyleSheet.css">  
 </head>
 <style>
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
     .imgRecipe {
         max-width: 100%;
         height: auto;
     }
     .imgContainer {
         width: 15rem;
+        margin: auto;
+    }
+    .recipeContainer{
+        text-align: center;
+    }
+    .recipeDisplayName{
+
+    }
+    .recipeCardDisplayContainer{
+        text-align: center;
+        background-color: #F1F2F2;
+        width: 30%;
+        margin:auto;
+        margin-bottom: 1.5rem;
+    }
+    .recipeTable{
+        margin: auto;
     }
 </style>
 <body>
     <form id="form1" runat="server">
-        <div id="header" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
-            <h1>Recipe Site</h1>
+        <div id="header" style="background-color: rgb(249, 63, 35); padding: 0.5rem; line-height: 200%; margin-bottom: 1px; font-family: 'Noto Sans-ExtraBold', sans-serif; font-weight: 900; font-size: 27px; color: white; text-align:center; margin-bottom: 0;">
+            RECIPEASY
         </div>
-        <div class="topnav"  id="myTopnav" style="border-color: black; border-style: solid; padding: 1px; line-height: 200%; display: block;">
+        <div class="topnav" id="myTopnav" style="background-color: rgb(249, 63, 35); padding: 1px; line-height: 100%; display: block; color: white; margin-top: 0;">
 
             <a href="HomePage.aspx">Home</a>
             
@@ -58,8 +79,10 @@
         }
         </script>
 
-        <div id="content" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%;">
+        <div id="content" style="padding: 1em; line-height: 200%;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>

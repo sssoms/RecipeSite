@@ -11,7 +11,7 @@
             <br />
             <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <br />
-            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <asp:HyperLink ID="lnkSignUp" runat="server" href ="SignUp.aspx">Sign Up</asp:HyperLink>
             <asp:HyperLink ID="lnkForgotPW" runat="server" href ="SendEmail.aspx">Forgot Password?</asp:HyperLink>

@@ -95,7 +95,12 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj"
+        "projectPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net45": {}

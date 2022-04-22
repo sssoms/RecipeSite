@@ -43,7 +43,7 @@ namespace RecipeSite
                             MailMessage mail = new MailMessage();
                             mail.From = new MailAddress("no-reply@recipesite.com");
                             mail.To.Add(new MailAddress(txtEmail.Text));
-                            mail.Subject = "Recipe Site Reset Password";
+                            mail.Subject = "RECIPEASY Reset Password";
                             mail.Body = "";
                             mail.IsBodyHtml = true;
                             mail.Priority = MailPriority.Normal;

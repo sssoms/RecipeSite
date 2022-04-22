@@ -18,6 +18,7 @@ namespace RecipeSite
         {
             if (!IsPostBack)
             {
+                Session["UserID"] = 1;
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "ShowUserIngredients";
                 objCommand.Parameters.AddWithValue("@user", Session["UserID"].ToString());

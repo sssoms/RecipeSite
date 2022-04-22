@@ -83,6 +83,29 @@ namespace RecipeWepAPI.Controllers
             return recipeList;
         }
 
+        // this method returns an ArrayList of integer all RecipeIDs.
+        [HttpGet("GetRecipeIDs")]
+        public List<int> GetRecipeIDs()
+        {
+            List<int> recipeIDList = new List<int>();
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet myDS;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetRecipeIDs";
+
+            myDS = objDB.GetDataSet(objCommand);
+            int count = myDS.Tables[0].Rows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                recipeIDList.Add(Convert.ToInt32(myDS.Tables[0].Rows[i]["RecipeID"]));
+            }
+            return recipeIDList;
+        }
+
+
         // this method receives a UserID and returns an ArrayList of integer that represents all the recipeIDs with a given UserID.
         [HttpGet("GetRecipeIDsByUserID/{userID}")]
         public List<int> GetRecipeIDsByUserID(int userID)
@@ -109,7 +132,7 @@ namespace RecipeWepAPI.Controllers
         // this method receives an UserID and a Recipe object and insert a new recipe to database
         // then returns the number of rows succesfully inserted (-1 if error occurred)
         [HttpPost("AddRecipe")]
-        public int AddRecipe(int userID, Recipe recipe)
+        public int AddRecipe([FromBody]Recipe recipe)
         {
             int result;
             DBConnect objDB = new DBConnect();
@@ -153,7 +176,7 @@ namespace RecipeWepAPI.Controllers
         // then returns the number of rows succesfully updated (-1 if error occurred)
         [HttpPut("UpdateRecipe")]
         //[HttpPut("UpdateRecipe/{recipeID}")]
-        public int UpdateRecipe(Recipe updatedRecipe)
+        public int UpdateRecipe([FromBody]Recipe updatedRecipe)
         {
             int result;
 
