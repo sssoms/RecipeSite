@@ -73,6 +73,7 @@ namespace RecipeSite
         protected void btnDetails_Click(object sender, EventArgs e)
         {
             //redirect to RecipePage.aspx
+            Response.Redirect("RecipePage.aspx?ID=" + RecipeID, false);
         }
     }
 }
