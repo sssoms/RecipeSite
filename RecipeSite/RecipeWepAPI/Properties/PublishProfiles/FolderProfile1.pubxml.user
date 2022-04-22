@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\loaner\WebAPI_Pub</_PublishTargetUrl>
+    <History>True|2022-04-22T09:35:16.4259154Z;True|2022-04-22T05:21:38.4297403-04:00;True|2022-04-22T05:08:10.0088045-04:00;</History>
+  </PropertyGroup>
+</Project>

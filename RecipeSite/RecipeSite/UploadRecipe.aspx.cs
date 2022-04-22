@@ -1,7 +1,11 @@
-﻿using System;
+﻿using RecipeSiteLibrary;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
@@ -10,6 +14,7 @@ namespace RecipeSite
 {
     public partial class UploadRecipe : System.Web.UI.Page
     {
+        String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
         int userID, imgSize;
         string fileExtension, imgName;
         byte[] imgData;
@@ -54,6 +59,78 @@ namespace RecipeSite
         // upload new recipe
         public void UploadRecipeToDatabase()
         {
+            string result;
+            Recipe updatedRecipe = new Recipe();
+
+            updatedRecipe.UserID = userID;
+            updatedRecipe.RecipeName = txtRecipeName.Text;
+            updatedRecipe.MainIngredient = ddlMainIngredient.SelectedValue;
+            updatedRecipe.CookingMethod = ddlCookingMethod.SelectedValue;
+            updatedRecipe.FoodCategory = ddlFoodCategory.SelectedValue;
+            updatedRecipe.Picture = imgData;
+            updatedRecipe.Servings = Convert.ToInt32(ddlServing.SelectedValue);
+            updatedRecipe.CookingTime = Convert.ToInt32(ddlCookingTime.SelectedValue);
+            updatedRecipe.Instruction1 = txtInstruction1.Text;
+            updatedRecipe.Instruction2 = txtInstruction2.Text;
+            updatedRecipe.Instruction3 = txtInstruction3.Text;
+            updatedRecipe.Instruction4 = txtInstruction4.Text;
+            updatedRecipe.Instruction5 = txtInstruction5.Text;
+            updatedRecipe.Instruction6 = txtInstruction6.Text;
+            updatedRecipe.Instruction7 = txtInstruction7.Text;
+            updatedRecipe.Instruction8 = txtInstruction8.Text;
+            updatedRecipe.Instruction9 = txtInstruction9.Text;
+            updatedRecipe.Instruction10 = txtInstruction10.Text;
+            updatedRecipe.Ingredient1 = ddlIngredient1.SelectedValue;
+            updatedRecipe.Ingredient2 = ddlIngredient2.SelectedValue;
+            updatedRecipe.Ingredient3 = ddlIngredient3.SelectedValue;
+            updatedRecipe.Ingredient4 = ddlIngredient4.SelectedValue;
+            updatedRecipe.Ingredient5 = ddlIngredient5.SelectedValue;
+            updatedRecipe.Ingredient6 = ddlIngredient6.SelectedValue;
+            updatedRecipe.Ingredient7 = ddlIngredient7.SelectedValue;
+            updatedRecipe.Ingredient8 = ddlIngredient8.SelectedValue;
+
+            // Serialize a Recipe object into a JSON string
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            String jsonRecipe = js.Serialize(updatedRecipe);
+
+            try
+            {
+                // send the Recipe objest to the Web API that will be used to update the associated recipe record (based on RecipeID) in the database
+                WebRequest request = WebRequest.Create(webApiURL + "AddRecipe/");
+                request.Method = "POST";
+                request.ContentLength = jsonRecipe.Length;
+                request.ContentType = "application/json";
+
+                StreamWriter writer = new StreamWriter(request.GetRequestStream());
+                writer.Write(jsonRecipe);
+                writer.Flush();
+                writer.Close();
+
+                WebResponse response = request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                String data = reader.ReadToEnd();
+                reader.Close();
+                response.Close();
+
+                if (data == "1")
+                {
+                    result = "Your new recipe has been uploaded successfully!";
+                }
+                else if (data == "0")
+                {
+                    result = "Your recipe has not been uploaded.";
+                }
+                else
+                    result = "Error has occurred. Please try again later.";
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+            /*
             try
             {
                 DBConnect objDB = new DBConnect();
@@ -81,45 +158,23 @@ namespace RecipeSite
                 objCommand.Parameters.AddWithValue("@Instruction9", txtInstruction9.Text);
                 objCommand.Parameters.AddWithValue("@Instruction10", txtInstruction10.Text);
 
-                if (ddlIngredient1.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient1", ddlIngredient1.SelectedValue);
-                }
-                if (ddlIngredient2.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient2", ddlIngredient2.SelectedValue);
-                }
-                if (ddlIngredient3.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient3", ddlIngredient3.SelectedValue);
-                }
-                if (ddlIngredient4.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient4", ddlIngredient4.SelectedValue);
-                }
-                if (ddlIngredient5.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient5", ddlIngredient5.SelectedValue);
-                }
-                if (ddlIngredient6.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient6", ddlIngredient6.SelectedValue);
-                }
-                if (ddlIngredient7.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient7", ddlIngredient7.SelectedValue);
-                }
-                if (ddlIngredient8.SelectedValue != "Select")
-                {
-                    objCommand.Parameters.AddWithValue("@Ingredient8", ddlIngredient8.SelectedValue);
-                }
+                objCommand.Parameters.AddWithValue("@Ingredient1", ddlIngredient1.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient2", ddlIngredient2.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient3", ddlIngredient3.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient4", ddlIngredient4.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient5", ddlIngredient5.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient6", ddlIngredient6.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient7", ddlIngredient7.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient8", ddlIngredient8.SelectedValue);
+                
                 objDB.DoUpdate(objCommand);
             }
             catch (Exception ex)
             {
                 lblError.Text = "Error has occurred: " + ex.ToString();
             }
-        } 
+            */
+        }
 
         // validate file extension
         public bool RecipeImgExtIsValid()
@@ -156,6 +211,7 @@ namespace RecipeSite
                 return valid;
             }
         }
+    
 
         // bind dropdown lists from tables in database
         public void BindDDL(DropDownList ddl)
@@ -177,10 +233,10 @@ namespace RecipeSite
                 ddl.DataTextField = ddlDS.Tables[0].Columns[0].ToString();
                 ddl.DataBind();
 
-                // for Ingredient ddl, add an option of Select 
+                // for Ingredient ddl, add an option of empty stsring
                 if (str == "Ingredient")
                 {
-                    ddl.Items.Insert(0, "Select");
+                    ddl.Items.Insert(0, "");
                 }
                 // for other ddl, add an option of Other
                 else

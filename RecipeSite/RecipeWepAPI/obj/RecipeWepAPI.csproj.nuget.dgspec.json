@@ -1,27 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj": {}
+    "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj": {
+    "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj",
+        "projectUniqueName": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj",
         "projectName": "RecipeWepAPI",
-        "projectPath": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj",
-        "packagesPath": "C:\\Users\\My PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\RecipeWepAPI\\obj\\",
+        "projectPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\RecipeWepAPI\\RecipeWepAPI.csproj",
+        "packagesPath": "C:\\Users\\loaner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\RecipeWepAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\My PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\loaner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -34,8 +31,8 @@
           "netcoreapp2.2": {
             "targetAlias": "netcoreapp2.2",
             "projectReferences": {
-              "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj"
+              "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -55,6 +52,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Formatters.Json": {
               "target": "Package",
@@ -86,15 +87,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj": {
+    "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\My PC\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj"
+        "projectPath": "C:\\Users\\loaner\\Git\\TermProject\\RecipeSite\\RecipeSite\\Utilities\\Utilities.csproj"
       },
       "frameworks": {
         "net45": {}

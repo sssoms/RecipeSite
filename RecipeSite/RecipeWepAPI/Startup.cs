@@ -25,6 +25,20 @@ namespace RecipeWepAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configure CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Access-Control-Allow-Origin", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                }); // end of AddPolicy() method
+            }); // end of AddCors() method
+
+            services.AddMvc();
+
             services.AddMvc()
                 .AddJsonOptions(options =>
                     options.SerializerSettings.ContractResolver = new DefaultContractResolver())
@@ -38,6 +52,9 @@ namespace RecipeWepAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Configure CORS
+            app.UseCors("Access-Control-Allow-Origin");
 
             app.UseMvc();
         }

@@ -196,6 +196,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RecipeSiteLibrary\RecipeSiteLibrary.csproj">
+      <Project>{6228f843-610b-4385-82e9-50f46fc611d7}</Project>
+      <Name>RecipeSiteLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{c45df6e5-87b3-4341-a3aa-5a44392a42fe}</Project>
       <Name>Utilities</Name>

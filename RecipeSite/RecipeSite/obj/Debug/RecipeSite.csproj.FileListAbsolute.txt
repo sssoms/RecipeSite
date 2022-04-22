@@ -150,3 +150,5 @@ C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\obj\Debug\Recip
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.csproj.CopyComplete
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.dll
 C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.pdb
+C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\bin\RecipeSiteLibrary.dll
+C:\Users\loaner\Git\TermProject\RecipeSite\RecipeSite\RecipeSite\bin\RecipeSiteLibrary.pdb
