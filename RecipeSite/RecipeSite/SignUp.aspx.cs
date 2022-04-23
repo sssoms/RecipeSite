@@ -38,6 +38,12 @@ namespace RecipeSite
                 objCommand.Parameters.AddWithValue("@Street", txtStreet.Text);
                 objCommand.Parameters.AddWithValue("@City", txtCity.Text);
                 objCommand.Parameters.AddWithValue("@State", DropDownListState.SelectedValue);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion1", txtSecurityQuestion1.Text);
+                objCommand.Parameters.AddWithValue("@SecurityAnswer1", txtSecurityAnswer1.Text);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion2", txtSecurityQuestion2.Text);
+                objCommand.Parameters.AddWithValue("@SecurityAnswer2", txtSecurityAnswer2.Text);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion3", txtSecurityQuestion3.Text);
+                objCommand.Parameters.AddWithValue("@SecurityAnswer3", txtSecurityQuestion3.Text);
 
                 objDB.DoUpdateUsingCmdObj(objCommand);
 

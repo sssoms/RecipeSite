@@ -43,7 +43,7 @@ namespace RecipeSite
             JavaScriptSerializer js = new JavaScriptSerializer();
             Recipe recipe = js.Deserialize<Recipe>(data);
 
-            if (recipe != null) { 
+            if (recipe != null) {
                 lblRecipeName.Text = recipe.RecipeName;
                 RecipeImage.ImageUrl = recipe.Picture;
                 lblMainIngredients.Text = recipe.MainIngredient;
@@ -56,7 +56,7 @@ namespace RecipeSite
                 lblNumberOfSaves.Text = recipe.UserSavedNum + " ";
 
                 // need to incorporate method to highlight? ingredients that matches the user's Ingredients list.
-                lblIngredient1.Text= recipe.Ingredient1;
+                lblIngredient1.Text = recipe.Ingredient1;
                 lblIngredient2.Text = recipe.Ingredient2;
                 lblIngredient3.Text = recipe.Ingredient3;
                 lblIngredient4.Text = recipe.Ingredient4;

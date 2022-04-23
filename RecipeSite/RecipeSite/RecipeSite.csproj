@@ -74,6 +74,7 @@
     <Content Include="LogIn.aspx" />
     <Content Include="MyIngredientsListPage.aspx" />
     <Content Include="MyRecipes.aspx" />
+    <Content Include="Recipe.asmx" />
     <Content Include="RecipeCardDisplay.ascx" />
     <Content Include="RecipePage.aspx" />
     <Content Include="Search.aspx" />
@@ -128,6 +129,10 @@
       <DependentUpon>MyRecipes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipe.asmx.cs">
+      <DependentUpon>Recipe.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RecipeCardDisplay.ascx.cs">
       <DependentUpon>RecipeCardDisplay.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +209,9 @@
       <Project>{c45df6e5-87b3-4341-a3aa-5a44392a42fe}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

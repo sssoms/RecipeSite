@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeSiteLibrary", "RecipeSiteLibrary\RecipeSiteLibrary.csproj", "{6228F843-610B-4385-82E9-50F46FC611D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeWepAPI", "RecipeWepAPI\RecipeWepAPI.csproj", "{93B934ED-046C-4A8F-8B56-F4D1B891DE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeWepAPI", "RecipeWepAPI\RecipeWepAPI.csproj", "{93B934ED-046C-4A8F-8B56-F4D1B891DE48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

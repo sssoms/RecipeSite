@@ -10,6 +10,9 @@
             <asp:Label ID="lblReviewTitle" runat="server"></asp:Label>
         </td>
         <td>
+           
+        </td>
+        <td>
             <asp:Label ID="lblReviewUsername" runat="server"></asp:Label>
         </td>
     </tr>

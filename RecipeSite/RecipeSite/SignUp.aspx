@@ -86,6 +86,29 @@
                 <asp:ListItem Value="WY">Wyoming</asp:ListItem>
             </asp:DropDownList>
             <br />
+
+            <h3>Create security questions and their answers for account recovery</h3>
+            <asp:Label ID="lblSecurityQuesiont1" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityQuestion1" runat="server"></asp:TextBox>
+
+            <asp:Label ID="lblSecurityAnswer1" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityAnswer1" runat="server"></asp:TextBox>
+
+            <asp:Label ID="lblSecurityQuestion2" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityQuestion2" runat="server"></asp:TextBox>
+
+            <asp:Label ID="lblSecurityAnswer2" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityAnswer2" runat="server"></asp:TextBox>
+
+            <asp:Label ID="lblSecurityQuestion3" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityQuestion3" runat="server"></asp:TextBox>
+
+            <asp:Label ID="lblSecurityAnswer3" runat="server"></asp:Label>
+            <asp:TextBox ID="txtSecurityAnswer3" runat="server"></asp:TextBox>
+
+
+
+
             <asp:Button runat="server" id="btnSignUp" Text="Sign Up" OnClick="btnSignUp_Click"/>
 
 

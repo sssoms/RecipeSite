@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RecipeSite.Master.cs" Inherits="RecipeSite.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="NavStyleSheet.css">  
+</head>
+<style>
+    .imgRecipe {
+        max-width: 100%;
+        height: auto;
+    }
+    .imgContainer {
+        width: 15rem;
+    }
+</style>
+<body>
+    <form id="form1" runat="server">
+        <div id="header" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
+            <h1>Recipe Site</h1>
+        </div>
+        <div class="topnav"  id="myTopnav" style="border-color: black; border-style: solid; padding: 1px; line-height: 200%; display: block;">
+
+            <a href="HomePage.aspx">Home</a>
+            
+            <a href="Search.aspx">About</a>
+            <a href="">About</a>
+            <a href="">FAQ</a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Personal Page
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="UploadRecipe.aspx">Upload Recipe Page</a>
+                    <a href="MyRecipes.aspx">My Recipe Page</a>
+                    <a href="FavoritesPage.aspx">Favorites</a>
+                    <a href="MyIngredientsListPage.aspx">My Ingredients list</a>
+                </div>
+            </div>
+            <a href="LogIn.aspx">Login</a>          
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="OpenClose()">&#9776;</a>
+
+        </div>
+        <script>
+        function OpenClose() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        </script>
+
+        <div id="content" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
