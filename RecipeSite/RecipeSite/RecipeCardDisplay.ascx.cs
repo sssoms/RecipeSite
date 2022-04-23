@@ -30,15 +30,15 @@ namespace RecipeSite
 
         public override void DataBind()
         {
-            /*
-            String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeByID/" + recipeID;
+            //String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeByID/" + RecipeID;
+            String url = "http://localhost:59328/api/recipes/GetRecipeByID/" + RecipeID;
 
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
 
             Stream stream = response.GetResponseStream();
             StreamReader reader = new StreamReader(stream);
-            String data = reader.ReadToEnd();
+            String data = reader.ReadToEnd(); 
             reader.Close();
             response.Close();
 
@@ -46,14 +46,18 @@ namespace RecipeSite
             JavaScriptSerializer js = new JavaScriptSerializer();
             Recipe recipe = js.Deserialize<Recipe>(data);
 
-            lblName.Text = recipe.RecipeName;
-            imgRecipe.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(recipe.Picture);
-            lblMainIngredient.Text = recipe.MainIngredient;
-            lblCookingMethod.Text = recipe.CookingMethod;
-            lblFoodCategory.Text = recipe.FoodCategory;
-            */
+            if (recipe != null)
+            {
+                lblName.Text = recipe.RecipeName;
+                imgRecipe.ImageUrl = recipe.Picture;
+                lblMainIngredient.Text = recipe.MainIngredient;
+                lblCookingMethod.Text = recipe.CookingMethod;
+                lblFoodCategory.Text = recipe.FoodCategory;
+            }
+            else lblName.Text = "no record";
 
-            ///*
+
+            /*
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
@@ -67,7 +71,7 @@ namespace RecipeSite
             lblMainIngredient.Text = (String)myDS.Tables[0].Rows[0]["MainIngredient"];
             lblCookingMethod.Text = (String)myDS.Tables[0].Rows[0]["CookingMethod"];
             lblFoodCategory.Text = (String)myDS.Tables[0].Rows[0]["Category"];
-            //*/
+            */
         }
 
         protected void btnDetails_Click(object sender, EventArgs e)

@@ -12,6 +12,7 @@ using Utilities;
 
 namespace RecipeWepAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
 
     public class RecipesController : Controller
@@ -41,7 +42,9 @@ namespace RecipeWepAPI.Controllers
                 recipe.FoodCategory = (String)myDS.Tables[0].Rows[0]["Category"];
                 recipe.Servings = Convert.ToInt32(myDS.Tables[0].Rows[0]["Servings"]);
                 recipe.CookingTime = Convert.ToInt32(myDS.Tables[0].Rows[0]["CookingTime"]);
-                recipe.Picture = (byte[])myDS.Tables[0].Rows[0]["Picture"];
+                recipe.Picture = "data:image/png;base64," + Convert.ToBase64String((byte[])myDS.Tables[0].Rows[0]["Picture"]);
+                recipe.UserSavedNum = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserSavedNum"]);
+                recipe.AvgStarRating = float.Parse(myDS.Tables[0].Rows[0]["AvgStarRating"].ToString());
 
                 recipe.Instruction1 = (String)myDS.Tables[0].Rows[0]["Instruction1"];
                 recipe.Instruction2 = (String)myDS.Tables[0].Rows[0]["Instruction2"];
@@ -238,6 +241,7 @@ namespace RecipeWepAPI.Controllers
 
 
 
+        // make these methods as SOAP Web services
 
         // method add ingredients to user's ingredient list
         [HttpPost("AddIngredientToUser/{userID}/{ingredient}")]

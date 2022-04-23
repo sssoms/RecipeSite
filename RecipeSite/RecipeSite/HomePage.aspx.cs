@@ -45,8 +45,8 @@ namespace RecipeSite
 
         public List<int> GetRecipeIDList()
         {
-            String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeIDs/";
-            //String url = "http://localhost:59328/api/recipes/GetRecipeIDs";
+            //String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeIDs/";
+            String url = "http://localhost:59328/api/recipes/GetRecipeIDs";
 
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();

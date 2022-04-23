@@ -14,7 +14,7 @@ namespace RecipeSiteLibrary
         private string mainIngredient;
         private string cookingMethod;
         private string foodCategory;
-        private byte[] picture;
+        private string picture;
         private int servings;
         private int cookingTime;
         private int userSavedNum;
@@ -74,7 +74,7 @@ namespace RecipeSiteLibrary
             set { foodCategory = value; }
         }
 
-        public byte[] Picture
+        public String Picture
         {
             get { return picture; }
             set { picture = value; }
@@ -216,7 +216,7 @@ namespace RecipeSiteLibrary
         {
         }
 
-        public Recipe(int userID, int recipeID, string recipeName, string mainIngredient, string cookingMethod, string foodCategory, byte[] picture, int servings, int cookingTime, string instruction1)
+        public Recipe(int userID, int recipeID, string recipeName, string mainIngredient, string cookingMethod, string foodCategory, string picture, int servings, int cookingTime, string instruction1)
         {
             UserID = userID;
             RecipeID = recipeID;

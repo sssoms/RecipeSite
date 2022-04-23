@@ -14,7 +14,8 @@ namespace RecipeSite
 {
     public partial class UploadRecipe : System.Web.UI.Page
     {
-        String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        String webApiURL = "http://localhost:59328/api/recipes/";
         int userID, imgSize;
         string fileExtension, imgName;
         byte[] imgData;
@@ -60,38 +61,38 @@ namespace RecipeSite
         public void UploadRecipeToDatabase()
         {
             string result;
-            Recipe updatedRecipe = new Recipe();
+            Recipe newRecipe = new Recipe();
 
-            updatedRecipe.UserID = userID;
-            updatedRecipe.RecipeName = txtRecipeName.Text;
-            updatedRecipe.MainIngredient = ddlMainIngredient.SelectedValue;
-            updatedRecipe.CookingMethod = ddlCookingMethod.SelectedValue;
-            updatedRecipe.FoodCategory = ddlFoodCategory.SelectedValue;
-            updatedRecipe.Picture = imgData;
-            updatedRecipe.Servings = Convert.ToInt32(ddlServing.SelectedValue);
-            updatedRecipe.CookingTime = Convert.ToInt32(ddlCookingTime.SelectedValue);
-            updatedRecipe.Instruction1 = txtInstruction1.Text;
-            updatedRecipe.Instruction2 = txtInstruction2.Text;
-            updatedRecipe.Instruction3 = txtInstruction3.Text;
-            updatedRecipe.Instruction4 = txtInstruction4.Text;
-            updatedRecipe.Instruction5 = txtInstruction5.Text;
-            updatedRecipe.Instruction6 = txtInstruction6.Text;
-            updatedRecipe.Instruction7 = txtInstruction7.Text;
-            updatedRecipe.Instruction8 = txtInstruction8.Text;
-            updatedRecipe.Instruction9 = txtInstruction9.Text;
-            updatedRecipe.Instruction10 = txtInstruction10.Text;
-            updatedRecipe.Ingredient1 = ddlIngredient1.SelectedValue;
-            updatedRecipe.Ingredient2 = ddlIngredient2.SelectedValue;
-            updatedRecipe.Ingredient3 = ddlIngredient3.SelectedValue;
-            updatedRecipe.Ingredient4 = ddlIngredient4.SelectedValue;
-            updatedRecipe.Ingredient5 = ddlIngredient5.SelectedValue;
-            updatedRecipe.Ingredient6 = ddlIngredient6.SelectedValue;
-            updatedRecipe.Ingredient7 = ddlIngredient7.SelectedValue;
-            updatedRecipe.Ingredient8 = ddlIngredient8.SelectedValue;
+            newRecipe.UserID = userID;
+            newRecipe.RecipeName = txtRecipeName.Text;
+            newRecipe.MainIngredient = ddlMainIngredient.SelectedValue;
+            newRecipe.CookingMethod = ddlCookingMethod.SelectedValue;
+            newRecipe.FoodCategory = ddlFoodCategory.SelectedValue;
+            newRecipe.Picture = "data:image/png;base64," + Convert.ToBase64String(imgData);
+            newRecipe.Servings = Convert.ToInt32(ddlServing.SelectedValue);
+            newRecipe.CookingTime = Convert.ToInt32(ddlCookingTime.SelectedValue);
+            newRecipe.Instruction1 = txtInstruction1.Text;
+            newRecipe.Instruction2 = txtInstruction2.Text;
+            newRecipe.Instruction3 = txtInstruction3.Text;
+            newRecipe.Instruction4 = txtInstruction4.Text;
+            newRecipe.Instruction5 = txtInstruction5.Text;
+            newRecipe.Instruction6 = txtInstruction6.Text;
+            newRecipe.Instruction7 = txtInstruction7.Text;
+            newRecipe.Instruction8 = txtInstruction8.Text;
+            newRecipe.Instruction9 = txtInstruction9.Text;
+            newRecipe.Instruction10 = txtInstruction10.Text;
+            newRecipe.Ingredient1 = ddlIngredient1.SelectedValue;
+            newRecipe.Ingredient2 = ddlIngredient2.SelectedValue;
+            newRecipe.Ingredient3 = ddlIngredient3.SelectedValue;
+            newRecipe.Ingredient4 = ddlIngredient4.SelectedValue;
+            newRecipe.Ingredient5 = ddlIngredient5.SelectedValue;
+            newRecipe.Ingredient6 = ddlIngredient6.SelectedValue;
+            newRecipe.Ingredient7 = ddlIngredient7.SelectedValue;
+            newRecipe.Ingredient8 = ddlIngredient8.SelectedValue;
 
             // Serialize a Recipe object into a JSON string
             JavaScriptSerializer js = new JavaScriptSerializer();
-            String jsonRecipe = js.Serialize(updatedRecipe);
+            String jsonRecipe = js.Serialize(newRecipe);
 
             try
             {

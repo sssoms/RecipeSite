@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
 
 namespace RecipeWepAPI.Models
 {
@@ -13,7 +14,7 @@ namespace RecipeWepAPI.Models
         private string mainIngredient;
         private string cookingMethod;
         private string foodCategory;
-        private byte[] picture;
+        private string picture;
         private int servings;
         private int cookingTime;
         private int userSavedNum;
@@ -73,7 +74,7 @@ namespace RecipeWepAPI.Models
             set { foodCategory = value; }
         }
 
-        public byte[] Picture
+        public String Picture
         {
             get { return picture; }
             set { picture = value; }
@@ -215,7 +216,7 @@ namespace RecipeWepAPI.Models
         {
         }
 
-        public Recipe(int userID, int recipeID, string recipeName, string mainIngredient, string cookingMethod, string foodCategory, byte[] picture, int servings, int cookingTime, string instruction1)
+        public Recipe(int userID, int recipeID, string recipeName, string mainIngredient, string cookingMethod, string foodCategory, string picture, int servings, int cookingTime, string instruction1)
         {
             UserID = userID;
             RecipeID = recipeID;

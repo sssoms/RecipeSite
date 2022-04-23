@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
@@ -16,7 +17,8 @@ namespace RecipeSite
 {
     public partial class EditRecipe : System.Web.UI.Page
     {
-        String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        String webApiURL = "http://localhost:59328/api/recipes/";
         int userID, imgSize, recipeID;
         string fileExtension, imgName;
         byte[] imgData;
@@ -24,7 +26,7 @@ namespace RecipeSite
         protected void Page_Load(object sender, EventArgs e)
         {
             userID = 1;//Convert.ToInt32(Session["UserID"]);
-            recipeID = 13; //Convert.ToInt32(Session["RecipeID"]);
+            recipeID = 3; //Convert.ToInt32(Session["RecipeID"]);
 
             if (!IsPostBack)
             {
@@ -62,7 +64,8 @@ namespace RecipeSite
 
         public void GetRecipeData()
         {
-            String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeByID/" + recipeID;
+            //String url = webApiURL + "GetRecipeByID/" + recipeID;
+            String url = webApiURL + "GetRecipeByID/" + recipeID;
 
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -77,8 +80,9 @@ namespace RecipeSite
             JavaScriptSerializer js = new JavaScriptSerializer();
             Recipe recipe = js.Deserialize<Recipe>(data);
 
+
             txtRecipeName.Text = recipe.RecipeName;
-            imgData = recipe.Picture;
+            imgData = Encoding.ASCII.GetBytes(recipe.Picture);
             ddlMainIngredient.SelectedValue = recipe.MainIngredient;
             ddlCookingMethod.SelectedValue = recipe.CookingMethod;
             ddlServing.SelectedValue = recipe.FoodCategory;
@@ -176,7 +180,7 @@ namespace RecipeSite
             updatedRecipe.MainIngredient = ddlMainIngredient.SelectedValue;
             updatedRecipe.CookingMethod = ddlCookingMethod.SelectedValue;
             updatedRecipe.FoodCategory = ddlFoodCategory.SelectedValue;
-            updatedRecipe.Picture = imgData;
+            updatedRecipe.Picture = "data:image/png;base64," + Convert.ToBase64String(imgData);
             updatedRecipe.Servings = Convert.ToInt32(ddlServing.SelectedValue);
             updatedRecipe.CookingTime = Convert.ToInt32(ddlCookingTime.SelectedValue);
             updatedRecipe.Instruction1 = txtInstruction1.Text;
