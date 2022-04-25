@@ -76,6 +76,7 @@
     <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
     <Content Include="RecipePage.aspx" />
+    <Content Include="RecipeSOAPWebAPI.asmx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="SendEmail.aspx" />
@@ -163,6 +164,10 @@
     </Compile>
     <Compile Include="RecipeSite.Master.designer.cs">
       <DependentUpon>RecipeSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeSOAPWebAPI.asmx.cs">
+      <DependentUpon>RecipeSOAPWebAPI.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
