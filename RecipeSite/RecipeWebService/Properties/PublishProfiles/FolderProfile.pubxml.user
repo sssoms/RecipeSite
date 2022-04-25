@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>X:\WebAPI</_PublishTargetUrl>
+    <History>True|2022-04-25T15:34:09.7397292Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/RecipeWebService.dll">
+      <publishTime>04/25/2022 11:34:05</publishTime>
+    </File>
+    <File Include="bin/RecipeWebService.pdb">
+      <publishTime>04/25/2022 11:34:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/24/2022 19:08:59</publishTime>
+    </File>
+    <File Include="bin/Utilities.dll">
+      <publishTime>04/25/2022 11:04:20</publishTime>
+    </File>
+    <File Include="bin/Utilities.pdb">
+      <publishTime>04/25/2022 11:04:20</publishTime>
+    </File>
+    <File Include="SearchDDL.asmx">
+      <publishTime>04/24/2022 20:26:39</publishTime>
+    </File>
+    <File Include="SecurityQuestion.asmx">
+      <publishTime>04/24/2022 23:26:03</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/25/2022 11:34:06</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

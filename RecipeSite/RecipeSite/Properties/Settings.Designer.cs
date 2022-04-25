@@ -36,7 +36,8 @@ namespace RecipeSite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44303/SearchDDL.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SearchDDL.asmx" +
+            "")]
         public string RecipeSite_SearchDDLSvc_SearchDDL {
             get {
                 return ((string)(this["RecipeSite_SearchDDLSvc_SearchDDL"]));
@@ -46,7 +47,8 @@ namespace RecipeSite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44303/SecurityQuestion.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SecurityQuesti" +
+            "on.asmx")]
         public string RecipeSite_SecurityQuestionSvc_SecurityQuestion {
             get {
                 return ((string)(this["RecipeSite_SecurityQuestionSvc_SecurityQuestion"]));

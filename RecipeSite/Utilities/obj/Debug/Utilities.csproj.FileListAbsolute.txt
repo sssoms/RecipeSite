@@ -32,3 +32,4 @@ C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.cs
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.dll
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache

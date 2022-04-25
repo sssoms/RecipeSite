@@ -83,6 +83,7 @@
     <Content Include="Images\personalPageIcon.png" />
     <Content Include="Images\starIcon.png" />
     <Content Include="Images\starSm.png" />
+    <Content Include="Logout.aspx" />
     <Content Include="MyIngredientsListPage.aspx" />
     <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyIngredientsListPage.aspx.cs">
       <DependentUpon>MyIngredientsListPage.aspx</DependentUpon>
@@ -278,10 +286,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://localhost:44303/SearchDDL.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SearchDDL.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SearchDDLSvc\</RelPath>
-      <UpdateFromURL>https://localhost:44303/SearchDDL.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SearchDDL.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -289,10 +297,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RecipeSite_SearchDDLSvc_SearchDDL</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://localhost:44303/SecurityQuestion.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SecurityQuestion.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SecurityQuestionSvc\</RelPath>
-      <UpdateFromURL>https://localhost:44303/SecurityQuestion.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SecurityQuestion.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

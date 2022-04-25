@@ -1,0 +1,6 @@
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\bin\Release\RecipeSiteLibrary.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\bin\Release\RecipeSiteLibrary.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Release\RecipeSiteLibrary.csproj.AssemblyReference.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Release\RecipeSiteLibrary.csproj.CoreCompileInputs.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Release\RecipeSiteLibrary.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Release\RecipeSiteLibrary.pdb

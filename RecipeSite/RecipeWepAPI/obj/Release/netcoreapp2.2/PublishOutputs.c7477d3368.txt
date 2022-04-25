@@ -1,0 +1,8 @@
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\appsettings.Development.json
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\appsettings.json
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\RecipeWepAPI.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\RecipeWepAPI.runtimeconfig.json
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\RecipeWepAPI.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\Utilities.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\Utilities.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeWepAPI\obj\Release\netcoreapp2.2\PubTmp\Out\RecipeWepAPI.deps.json

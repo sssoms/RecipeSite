@@ -15,9 +15,9 @@ namespace RecipeSite
 {
     public partial class Search : System.Web.UI.Page
     {
-        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
-        String webApiURL = "http://localhost:59328/api/recipes/";
-        bool loggedin = true;
+        String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        //String webApiURL = "http://localhost:59328/api/recipes/";
+        bool loggedin = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
