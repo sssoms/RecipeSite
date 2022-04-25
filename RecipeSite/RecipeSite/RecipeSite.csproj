@@ -91,20 +91,20 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.disco" />
-    <Content Include="Web References\SearchDDLSvc\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
     <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.wsdl" />
     <Content Include="Web References\RecipeSOAPWebAPISvs\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\SearchDDLSvc\SearchDDL.disco" />
-    <Content Include="Web References\SecurityQuestionSvc\Reference.map">
+    <None Include="Web References\SearchDDLSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
+    <None Include="Web References\SearchDDLSvc\SearchDDL.disco" />
+    <None Include="Web References\SecurityQuestionSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web References\SecurityQuestionSvc\SecurityQuestion.disco" />
     <Content Include="Web.config" />
     <Content Include="ReviewCardDisplay.ascx" />

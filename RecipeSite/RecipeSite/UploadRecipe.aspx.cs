@@ -23,7 +23,7 @@ namespace RecipeSite
 
         protected void Page_Load(object sender, EventArgs e)
         {   
-            userID = 1;//Convert.ToInt32(Session["UserID"]);
+            userID = Convert.ToInt32(Session["UserID"]);
             if (Session["LoggedIn"] != null)
                 loggedin = (Boolean)Session["LoggedIn"];
 

@@ -26,8 +26,8 @@ namespace RecipeSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            userID = 1;//Convert.ToInt32(Session["UserID"]);
-            recipeID = 3; //Convert.ToInt32(Session["RecipeID"]);
+            userID = Convert.ToInt32(Session["UserID"]);
+            recipeID = Convert.ToInt32(Request.QueryString["ID"]);
             if(Session["LoggedIn"] != null)
                 loggedin = (Boolean)Session["LoggedIn"];
 
@@ -72,7 +72,6 @@ namespace RecipeSite
 
         public void GetRecipeData()
         {
-            //String url = webApiURL + "GetRecipeByID/" + recipeID;
             String url = webApiURL + "GetRecipeByID/" + recipeID;
 
             WebRequest request = WebRequest.Create(url);

@@ -17,9 +17,17 @@ namespace RecipeSite
     public partial class RecipeCardDisplay : System.Web.UI.UserControl
     {
         int recipeID;
+        int userID;
+        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        String webApiURL = "http://localhost:59328/api/recipes/";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            userID = Convert.ToInt32(Session["UserID"]);
+            if (IsMyRecipe(userID))
+            {
+                btnEdit.Visible = true;
+                btnEdit.Enabled = true;
+            }
         }
 
         public int RecipeID
@@ -30,8 +38,7 @@ namespace RecipeSite
 
         public override void DataBind()
         {
-            //String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeByID/" + RecipeID;
-            String url = "http://localhost:59328/api/recipes/GetRecipeByID/" + RecipeID;
+            String url = webApiURL + "GetRecipeByID/" + RecipeID;
 
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -64,6 +71,33 @@ namespace RecipeSite
         {
             //redirect to RecipePage.aspx
             Response.Redirect("RecipePage.aspx?ID=" + RecipeID, false);
+        }
+
+        public bool IsMyRecipe(int userID)
+        {
+            String url = webApiURL + "GetUserIDByRecipeID/" + RecipeID;
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+            String data = reader.ReadToEnd();
+            reader.Close();
+            response.Close();
+
+            // deserialize a JSON string into a Recipe object
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            int recipeUserID = js.Deserialize<int>(data);
+
+            if (userID == recipeUserID)
+                return true;
+            else 
+                return false;
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditRecipe.aspx?ID=" + RecipeID, false);
         }
     }
 }

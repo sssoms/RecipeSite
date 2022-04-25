@@ -26,20 +26,20 @@ namespace RecipeSite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44303/SearchDDL.asmx")]
-        public string RecipeSite_SearchDDLSvc_SearchDDL {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44330/RecipeSOAPWebAPI.asmx")]
+        public string RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI {
             get {
-                return ((string)(this["RecipeSite_SearchDDLSvc_SearchDDL"]));
+                return ((string)(this["RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44330/RecipeSOAPWebAPI.asmx")]
-        public string RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44303/SearchDDL.asmx")]
+        public string RecipeSite_SearchDDLSvc_SearchDDL {
             get {
-                return ((string)(this["RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI"]));
+                return ((string)(this["RecipeSite_SearchDDLSvc_SearchDDL"]));
             }
         }
         

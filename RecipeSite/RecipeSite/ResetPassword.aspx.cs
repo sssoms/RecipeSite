@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
+using System.Web.Script.Serialization;
 
 namespace RecipeSite
 {
@@ -14,7 +15,7 @@ namespace RecipeSite
     {
         int userID;
         Random rnd = new Random();
-        int rndNum;
+        SecurityQuestionSvc.SecurityQuestion pxy = new SecurityQuestionSvc.SecurityQuestion();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,14 +23,37 @@ namespace RecipeSite
             if (!IsPostBack)
             {
                 // randomly select one security question out of 3 questions
-                rndNum = rnd.Next(1, 3);
-                lblSecurityQuestion.Text = rndNum.ToString();
+                Session["RndNum"] = rnd.Next(0, 2);                
+                
+                string[] sqList = pxy.GetSecurityQuestions();
+                lblSecurityQuestion.Text = sqList[Convert.ToInt32(Session["RndNum"])];
             }
         }
         protected void btnVerify_Click(object sender, EventArgs e)
         {
+            // get the corresponding answer using Web Service
+            string answer = pxy.GetSecurityAnswer(userID, Convert.ToInt32(Session["RndNum"]));
+
+            if (txtSecurityAnswer.Text == answer )
+            {
+
+                lblSecurityQuestion.Visible = false;
+                txtSecurityAnswer.Visible = false;
+                btnVerify.Visible = false;
+
+
+                Label1.Text = "Enter a new password";
+                txtPassword.Visible = true;
+                btnReset.Visible = true;
+            }
+            else
+            {
+                lblError.Text = "Your answer doesn't match our data.";
+            }
+            /*
             try
             {
+
                 DBConnect objDB = new DBConnect();
                 SqlCommand objCommand = new SqlCommand();
 
@@ -40,14 +64,15 @@ namespace RecipeSite
 
                 string str = "SecurityAnswer" + rndNum;
                 string securityAnswer = (String)myDS.Tables[0].Rows[0][str];
-                Label1.Text = securityAnswer;
 
                 if (securityAnswer == txtSecurityAnswer.Text)
                 {
                     lblResetPassword.Visible = false;
+                    
                     lblSecurityQuestion.Visible = false;
                     txtSecurityAnswer.Visible = false;
                     btnVerify.Visible = false;
+                    
                     lblResetPassword.Visible = true;
                     txtPassword.Visible = true;
                     btnReset.Visible = true;
@@ -64,7 +89,7 @@ namespace RecipeSite
             catch (Exception ex)
             {
                 lblError.Text = ex.ToString();
-            }
+            }*/
         }
 
         protected void btnReset_Click(object sender, EventArgs e)
@@ -77,7 +102,8 @@ namespace RecipeSite
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "TP_ResetPassword";
                 objCommand.Parameters.AddWithValue("@UserID", userID);
-                objCommand.Parameters.AddWithValue("@Password", txtPassword.Text);
+                objCommand.Parameters.AddWithValue("@Password", EncryptString(txtPassword.Text));
+                string str = EncryptString(txtPassword.Text);
 
                 int result = objDB.DoUpdate(objCommand);
 
@@ -85,7 +111,7 @@ namespace RecipeSite
                 {
                     txtPassword.Visible = false;
                     btnReset.Visible = false;
-                    lblResetSuccessful.Visible = true;
+                    Label1.Text = "You've successfully reset your password!";
                     btnReturn.Visible = true;
                 }
                 else if (result == 0)
@@ -104,6 +130,13 @@ namespace RecipeSite
         protected void btnReturn_Click(object sender, EventArgs e)
         {
             Response.Redirect("default.aspx");
+        }
+
+        public string EncryptString(string strEncrypted)
+        {
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
         }
     }
 }

@@ -40,5 +40,33 @@ namespace RecipeWebService
 
             return sqList;
         }
+
+        [WebMethod]
+        public string GetSecurityAnswer(int userID, int rndNum)
+        {
+            try
+            {
+                string answer;
+
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_GetSecurityAnswer";
+
+                string securityAnswerNum = "SecurityAnswer" + rndNum;
+
+                objCommand.Parameters.AddWithValue("@UserID", userID);
+
+                DataSet saDS = objDB.GetDataSet(objCommand);
+
+                answer = (String)saDS.Tables[0].Rows[0][rndNum];
+
+                return answer;
+            }
+            catch (Exception ex)
+            {
+                return "Error has occurred." + ex.ToString();
+            }
+        }
     }
 }

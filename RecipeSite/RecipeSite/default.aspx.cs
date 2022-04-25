@@ -21,7 +21,6 @@ namespace RecipeSite
             {
                 HttpCookie cookie = Request.Cookies["LogIn_Info"];
                 txtEmail.Text = cookie.Values["Email"].ToString();
-                //txtPassword.Text = cookie.Values["Password"].ToString();
             }
 
         }
@@ -44,14 +43,13 @@ namespace RecipeSite
                 try
                 {
                     //UserID = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserID"]);
-                    if (myDS.Tables[0].Rows[0]["Password"].ToString() == txtPassword.Text)
+                    if (myDS.Tables[0].Rows[0]["Password"].ToString() == EncryptString(txtPassword.Text))
                     {
                         //allow for faster logins by storing and retrieving the user's login info using a cookie
                         if (ckbRememberMe.Checked)
                         {
                             HttpCookie myCookie = new HttpCookie("LogIn_Info");
                             myCookie.Values["Email"] = txtEmail.Text;
-                            //myCookie.Values["Password"] = txtPassword.Text;
                             myCookie.Expires = DateTime.Now.AddYears(1);
 
                             Response.Cookies.Add(myCookie);
@@ -75,6 +73,13 @@ namespace RecipeSite
                     lblError.Text = "Your login info does not exist. Please re-enter your email or password.";
                 }
             }
+        }
+
+        public string EncryptString(string strEncrypted)
+        {
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
         }
     }
 }

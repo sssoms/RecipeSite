@@ -49,6 +49,8 @@
 &nbsp;&nbsp;
     <asp:Label ID="lblStarRating" runat="server"></asp:Label>
     <br />
-    <asp:Button CssClass="buttonStyle" ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" /><br /><br />
+    <asp:Button CssClass="buttonStyle" ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" />&nbsp;&nbsp;
+    <asp:Button CssClass="buttonStyle" ID="btnEdit" runat="server" Text="Edit" Visible="False" Enabled="False" OnClick="btnEdit_Click" />
+    <br /><br />
 </div>
 

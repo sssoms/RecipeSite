@@ -15,15 +15,6 @@ namespace RecipeSite
     {
 
         /// <summary>
-        /// lblSecurityQuestion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecurityQuestion;
-
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// lblSecurityQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSecurityQuestion;
 
         /// <summary>
         /// txtSecurityAnswer control.
@@ -51,24 +51,6 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Button btnVerify;
 
         /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-
-        /// <summary>
-        /// lblResetPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResetPassword;
-
-        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -87,15 +69,6 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Button btnReset;
 
         /// <summary>
-        /// lblResetSuccessful control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResetSuccessful;
-
-        /// <summary>
         /// btnReturn control.
         /// </summary>
         /// <remarks>
@@ -103,5 +76,14 @@ namespace RecipeSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReturn;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }
