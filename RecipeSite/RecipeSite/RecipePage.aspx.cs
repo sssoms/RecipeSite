@@ -20,7 +20,7 @@ namespace RecipeSite
         String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
         //String webApiURL = "http://localhost:59328/api/recipes/";
         int recipeID, userID;
-        bool loggedin = false;
+        bool loggedin = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -5,23 +5,26 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>X:\TermProject</_PublishTargetUrl>
-    <History>True|2022-04-25T15:47:29.9651091Z;False|2022-04-25T11:46:35.8396023-04:00;True|2022-04-25T11:30:21.3684406-04:00;True|2022-04-25T11:23:07.9479578-04:00;</History>
+    <History>True|2022-04-25T20:16:10.1764923Z;False|2022-04-25T16:11:57.9800282-04:00;False|2022-04-25T16:07:00.9297789-04:00;False|2022-04-25T16:04:23.6615732-04:00;True|2022-04-25T14:46:20.5512529-04:00;True|2022-04-25T14:42:16.1378912-04:00;True|2022-04-25T12:01:44.6847794-04:00;True|2022-04-25T12:01:10.4138591-04:00;True|2022-04-25T11:58:47.2970081-04:00;True|2022-04-25T11:47:29.9651091-04:00;False|2022-04-25T11:46:35.8396023-04:00;True|2022-04-25T11:30:21.3684406-04:00;True|2022-04-25T11:23:07.9479578-04:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AjaxControlToolkit.dll">
-      <publishTime>04/25/2022 05:40:46</publishTime>
+      <publishTime>04/25/2022 16:10:37</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>04/24/2022 19:08:59</publishTime>
     </File>
     <File Include="bin/RecipeSite.dll">
-      <publishTime>04/25/2022 11:47:25</publishTime>
+      <publishTime>04/25/2022 16:16:06</publishTime>
+    </File>
+    <File Include="bin/RecipeSite.dll.config">
+      <publishTime>04/25/2022 16:04:13</publishTime>
     </File>
     <File Include="bin/RecipeSite.pdb">
-      <publishTime>04/25/2022 11:47:25</publishTime>
+      <publishTime>04/25/2022 16:16:06</publishTime>
     </File>
     <File Include="bin/RecipeSite.XmlSerializers.dll">
-      <publishTime>04/25/2022 11:47:26</publishTime>
+      <publishTime>04/25/2022 16:16:07</publishTime>
     </File>
     <File Include="bin/RecipeSiteLibrary.dll">
       <publishTime>04/25/2022 11:22:59</publishTime>
@@ -107,6 +110,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>04/24/2022 19:08:59</publishTime>
     </File>
+    <File Include="bin/Syncfusion.Compression.Base.dll">
+      <publishTime>04/24/2022 19:08:58</publishTime>
+    </File>
+    <File Include="bin/Syncfusion.Licensing.dll">
+      <publishTime>04/24/2022 19:08:58</publishTime>
+    </File>
+    <File Include="bin/Syncfusion.Pdf.Base.dll">
+      <publishTime>04/24/2022 19:08:58</publishTime>
+    </File>
     <File Include="bin/Utilities.dll">
       <publishTime>04/25/2022 11:04:20</publishTime>
     </File>
@@ -123,7 +135,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/25/2022 02:53:30</publishTime>
     </File>
     <File Include="HomePage.aspx">
-      <publishTime>04/25/2022 06:09:38</publishTime>
+      <publishTime>04/25/2022 16:01:32</publishTime>
     </File>
     <File Include="Images/Avatar.png">
       <publishTime>04/16/2022 15:54:58</publishTime>
@@ -156,13 +168,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/25/2022 02:53:59</publishTime>
     </File>
     <File Include="MyRecipes.aspx">
-      <publishTime>04/25/2022 10:54:18</publishTime>
+      <publishTime>04/25/2022 16:01:32</publishTime>
     </File>
     <File Include="NavStyleSheet.css">
       <publishTime>04/24/2022 19:08:58</publishTime>
     </File>
     <File Include="RecipeCardDisplay.ascx">
-      <publishTime>04/25/2022 06:22:01</publishTime>
+      <publishTime>04/25/2022 16:01:32</publishTime>
     </File>
     <File Include="RecipePage.aspx">
       <publishTime>04/25/2022 08:38:19</publishTime>
@@ -180,7 +192,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/25/2022 08:15:50</publishTime>
     </File>
     <File Include="Search.aspx">
-      <publishTime>04/25/2022 01:49:07</publishTime>
+      <publishTime>04/25/2022 16:01:32</publishTime>
     </File>
     <File Include="SendEmail.aspx">
       <publishTime>04/25/2022 02:43:50</publishTime>
@@ -190,6 +202,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="UploadRecipe.aspx">
       <publishTime>04/25/2022 02:27:51</publishTime>
+    </File>
+    <File Include="Web References/RecipeSOAPWebAPISvc/Reference.map">
+      <publishTime>04/25/2022 16:04:12</publishTime>
     </File>
     <File Include="Web References/RecipeSOAPWebAPISvs/Reference.map">
       <publishTime>04/24/2022 22:55:02</publishTime>
@@ -201,7 +216,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/25/2022 11:46:13</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/25/2022 11:47:27</publishTime>
+      <publishTime>04/25/2022 16:16:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

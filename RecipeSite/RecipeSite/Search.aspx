@@ -25,13 +25,10 @@
             font-weight: 500;
         }
 
-    </style>   
-
+    </style>
     <div class ="container">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <h3>Find a Recipe</h3><br />
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
                 <table>
                     <tr>
                         <td>
@@ -55,9 +52,8 @@
                         </td>
                     </tr>
                 </table>
-            </ContentTemplate>  
-        </asp:UpdatePanel>
         <br />
         <asp:Button CssClass="buttonStyle" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
     </div>
 </asp:Content>

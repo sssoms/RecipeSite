@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RecipeCardDisplay.ascx.cs" Inherits="RecipeSite.RecipeCardDisplay" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <style>
-        table{
+        .recipeTable{
             margin:auto;
         }
-        td{
+        .recipeTable td{
             padding: 0.7rem;
             text-align: left;
         }

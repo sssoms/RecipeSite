@@ -42,10 +42,10 @@ namespace RecipeSite
                         {
                             int userID = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserID"]);
                             MailMessage mail = new MailMessage();
-                            mail.From = new MailAddress("no-reply@recipesite.com");
+                            mail.From = new MailAddress("no-reply@recipeasy.com");
                             mail.To.Add(new MailAddress(txtEmail.Text));
                             mail.Subject = "RECIPEASY Reset Password";
-                            mail.Body = "<a href=\"http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/Project4/ResetPassword.aspx?ID=" + userID
+                            mail.Body = "<a href=\"http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/ResetPassword.aspx?ID=" + userID
                                 + "\">Click here to reset your password for RECIPEASY</a>";
                             mail.IsBodyHtml = true;
                             mail.Priority = MailPriority.Normal;

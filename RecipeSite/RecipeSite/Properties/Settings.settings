@@ -2,14 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RecipeSite.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://localhost:44330/RecipeSOAPWebAPI.asmx</Value>
-    </Setting>
     <Setting Name="RecipeSite_SearchDDLSvc_SearchDDL" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SearchDDL.asmx</Value>
     </Setting>
     <Setting Name="RecipeSite_SecurityQuestionSvc_SecurityQuestion" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SecurityQuestion.asmx</Value>
+    </Setting>
+    <Setting Name="RecipeSite_RecipeSOAPWebAPISvc_RecipeSOAPWebAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/RecipeSOAPWebAPI.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

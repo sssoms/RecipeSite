@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddRecipeToFavorite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecipeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRecipeToFavoriteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveRecipeFromFavorite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecipeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRecipeFromFavoriteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddIngredientToUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ingredientID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddIngredientToUserResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddRecipeToFavoriteSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRecipeToFavorite" />
+  </wsdl:message>
+  <wsdl:message name="AddRecipeToFavoriteSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRecipeToFavoriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveRecipeFromFavoriteSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveRecipeFromFavorite" />
+  </wsdl:message>
+  <wsdl:message name="RemoveRecipeFromFavoriteSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveRecipeFromFavoriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddIngredientToUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddIngredientToUser" />
+  </wsdl:message>
+  <wsdl:message name="AddIngredientToUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddIngredientToUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecipeSOAPWebAPISoap">
+    <wsdl:operation name="AddRecipeToFavorite">
+      <wsdl:input message="tns:AddRecipeToFavoriteSoapIn" />
+      <wsdl:output message="tns:AddRecipeToFavoriteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRecipeFromFavorite">
+      <wsdl:input message="tns:RemoveRecipeFromFavoriteSoapIn" />
+      <wsdl:output message="tns:RemoveRecipeFromFavoriteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIngredientToUser">
+      <wsdl:input message="tns:AddIngredientToUserSoapIn" />
+      <wsdl:output message="tns:AddIngredientToUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecipeSOAPWebAPISoap" type="tns:RecipeSOAPWebAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddRecipeToFavorite">
+      <soap:operation soapAction="http://tempuri.org/AddRecipeToFavorite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRecipeFromFavorite">
+      <soap:operation soapAction="http://tempuri.org/RemoveRecipeFromFavorite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIngredientToUser">
+      <soap:operation soapAction="http://tempuri.org/AddIngredientToUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecipeSOAPWebAPISoap12" type="tns:RecipeSOAPWebAPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddRecipeToFavorite">
+      <soap12:operation soapAction="http://tempuri.org/AddRecipeToFavorite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRecipeFromFavorite">
+      <soap12:operation soapAction="http://tempuri.org/RemoveRecipeFromFavorite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIngredientToUser">
+      <soap12:operation soapAction="http://tempuri.org/AddIngredientToUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecipeSOAPWebAPI">
+    <wsdl:port name="RecipeSOAPWebAPISoap" binding="tns:RecipeSOAPWebAPISoap">
+      <soap:address location="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/RecipeSOAPWebAPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RecipeSOAPWebAPISoap12" binding="tns:RecipeSOAPWebAPISoap12">
+      <soap12:address location="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/RecipeSOAPWebAPI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

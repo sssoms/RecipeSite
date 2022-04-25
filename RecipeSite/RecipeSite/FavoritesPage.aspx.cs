@@ -35,6 +35,8 @@ namespace RecipeSite
             {
                 Response.Redirect("default.aspx");
             }
+
+            RecipeSOAPWebAPISvc.RecipeSOAPWebAPI pxy = new RecipeSOAPWebAPISvc.RecipeSOAPWebAPI();
         }
     }
 }

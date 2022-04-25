@@ -71,6 +71,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\RecipeSite.dll" />
+    <Content Include="bin\RecipeSite.pdb" />
+    <Content Include="bin\RecipeSite.XmlSerializers.dll" />
+    <Content Include="bin\RecipeSiteLibrary.dll" />
+    <Content Include="bin\RecipeSiteLibrary.pdb" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\Syncfusion.Compression.Base.dll" />
+    <Content Include="bin\Syncfusion.Licensing.dll" />
+    <Content Include="bin\Syncfusion.Pdf.Base.dll" />
+    <Content Include="bin\Utilities.dll" />
+    <Content Include="bin\Utilities.pdb" />
     <Content Include="EditRecipe.aspx" />
     <Content Include="FavoritesPage.aspx" />
     <Content Include="HomePage.aspx" />
@@ -88,24 +119,32 @@
     <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
     <Content Include="RecipePage.aspx" />
-    <Content Include="RecipeSOAPWebAPI.asmx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="SendEmail.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="NavStyleSheet.css" />
     <Content Include="UploadRecipe.aspx" />
+    <Content Include="bin\RecipeSite.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.disco" />
-    <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.wsdl" />
-    <Content Include="Web References\RecipeSOAPWebAPISvs\Reference.map">
+    <None Include="Web References\RecipeSOAPWebAPISvc\RecipeSOAPWebAPI.disco" />
+    <Content Include="Web References\SearchDDLSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\SearchDDLSvc\Reference.map">
+    <None Include="Web References\RecipeSOAPWebAPISvc\RecipeSOAPWebAPI.wsdl" />
+    <Content Include="Web References\RecipeSOAPWebAPISvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -195,10 +234,6 @@
     <Compile Include="RecipeSite.Master.designer.cs">
       <DependentUpon>RecipeSite.Master</DependentUpon>
     </Compile>
-    <Compile Include="RecipeSOAPWebAPI.asmx.cs">
-      <DependentUpon>RecipeSOAPWebAPI.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,7 +276,7 @@
     <Compile Include="ReviewCardDisplay.ascx.designer.cs">
       <DependentUpon>ReviewCardDisplay.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Web References\RecipeSOAPWebAPISvs\Reference.cs">
+    <Compile Include="Web References\RecipeSOAPWebAPISvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -286,6 +321,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/RecipeSOAPWebAPI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RecipeSOAPWebAPISvc\</RelPath>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/RecipeSOAPWebAPI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RecipeSite_RecipeSOAPWebAPISvc_RecipeSOAPWebAPI</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/TermProject/SearchDDL.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SearchDDLSvc\</RelPath>
@@ -307,17 +353,6 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RecipeSite_SecurityQuestionSvc_SecurityQuestion</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="https://localhost:44330/RecipeSOAPWebAPI.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\RecipeSOAPWebAPISvs\</RelPath>
-      <UpdateFromURL>https://localhost:44330/RecipeSOAPWebAPI.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

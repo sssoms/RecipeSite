@@ -17,7 +17,7 @@ namespace RecipeSite
     {
         String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
         //String webApiURL = "http://localhost:59328/api/recipes/";
-        bool loggedin = false;
+        bool loggedin = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace RecipeSite
                     ctrl.RecipeID = Convert.ToInt32(recipeIDs[recordNum]);
                     ctrl.DataBind();
 
-                    Page.Master.FindControl("ContentPlaceHolder1").Controls.Add(ctrl);
+                    this.PlaceHolder1.Controls.Add(ctrl);
                 }
             }
             catch (Exception ex)
@@ -107,7 +107,5 @@ namespace RecipeSite
 
             return recipeIDs;
         }
-
-
     }
 }
