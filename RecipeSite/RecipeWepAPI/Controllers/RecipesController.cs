@@ -14,9 +14,9 @@ namespace RecipeWepAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-
     public class RecipesController : Controller
     {
+        [HttpGet]
         // this method receives RecipeID and returns a Recipe object with the field values from the database record
         [HttpGet("GetRecipeByID/{recipeID}")]
         public Recipe GetRecipeByID(int recipeID)
@@ -221,7 +221,7 @@ namespace RecipeWepAPI.Controllers
         // this method receives a Recipe object and update the recipe associated with the RecipeID of the Recipe Objectwith update data in the Recipe object
         // then returns the number of rows succesfully updated (-1 if error occurred)
         [HttpPut("UpdateRecipe")]
-        //[HttpPut("UpdateRecipe/{recipeID}")]
+        [HttpPut("UpdateRecipe/{recipeID}")]
         public int UpdateRecipe([FromBody]Recipe updatedRecipe)
         {
             int result;
@@ -237,7 +237,6 @@ namespace RecipeWepAPI.Controllers
             objCommand.Parameters.AddWithValue("@MainIngredient", updatedRecipe.MainIngredient);
             objCommand.Parameters.AddWithValue("@CookingMethod", updatedRecipe.CookingMethod);
             objCommand.Parameters.AddWithValue("@FoodCategory", updatedRecipe.FoodCategory);
-            objCommand.Parameters.AddWithValue("@Picture", updatedRecipe.Picture);
             objCommand.Parameters.AddWithValue("@Servings", updatedRecipe.Servings);
             objCommand.Parameters.AddWithValue("@CookingTime", updatedRecipe.CookingTime);
             objCommand.Parameters.AddWithValue("@Instruction1", updatedRecipe.Instruction1);
