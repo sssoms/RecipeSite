@@ -137,52 +137,6 @@ namespace RecipeSite
             {
 
             }
-
-
-            /*
-            try
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_CreateNewRecipe";
-
-                objCommand.Parameters.AddWithValue("@UserID", userID);
-                objCommand.Parameters.AddWithValue("@RecipeName", txtRecipeName.Text);
-                objCommand.Parameters.AddWithValue("@MainIngredient", ddlMainIngredient.SelectedValue);
-                objCommand.Parameters.AddWithValue("@CookingMethod", ddlCookingMethod.SelectedValue);
-                objCommand.Parameters.AddWithValue("@FoodCategory", ddlFoodCategory.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Picture", imgData);
-                objCommand.Parameters.AddWithValue("@Servings", ddlServing.SelectedValue);
-                objCommand.Parameters.AddWithValue("@CookingTime", ddlCookingTime.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Instruction1", txtInstruction1.Text);
-                objCommand.Parameters.AddWithValue("@Instruction2", txtInstruction2.Text);
-                objCommand.Parameters.AddWithValue("@Instruction3", txtInstruction3.Text);
-                objCommand.Parameters.AddWithValue("@Instruction4", txtInstruction4.Text);
-                objCommand.Parameters.AddWithValue("@Instruction5", txtInstruction5.Text);
-                objCommand.Parameters.AddWithValue("@Instruction6", txtInstruction6.Text);
-                objCommand.Parameters.AddWithValue("@Instruction7", txtInstruction7.Text);
-                objCommand.Parameters.AddWithValue("@Instruction8", txtInstruction8.Text);
-                objCommand.Parameters.AddWithValue("@Instruction9", txtInstruction9.Text);
-                objCommand.Parameters.AddWithValue("@Instruction10", txtInstruction10.Text);
-
-                objCommand.Parameters.AddWithValue("@Ingredient1", ddlIngredient1.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient2", ddlIngredient2.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient3", ddlIngredient3.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient4", ddlIngredient4.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient5", ddlIngredient5.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient6", ddlIngredient6.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient7", ddlIngredient7.SelectedValue);
-                objCommand.Parameters.AddWithValue("@Ingredient8", ddlIngredient8.SelectedValue);
-                
-                objDB.DoUpdate(objCommand);
-            }
-            catch (Exception ex)
-            {
-                lblError.Text = "Error has occurred: " + ex.ToString();
-            }
-            */
         }
 
         // validate file extension

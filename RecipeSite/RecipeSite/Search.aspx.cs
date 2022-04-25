@@ -17,7 +17,7 @@ namespace RecipeSite
     {
         String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
         //String webApiURL = "http://localhost:59328/api/recipes/";
-        bool loggedin = true;
+        bool loggedin = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,6 +29,7 @@ namespace RecipeSite
             {
                 Response.Redirect("default.aspx");
             }
+            LoadRecipes();
         }
 
         protected void ddlSearchBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,9 +63,12 @@ namespace RecipeSite
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+        }
+
+        public void LoadRecipes()
+        {
             try
             {
-                //lblSelectedSearchBy.Text = ddlSearchBy.SelectedValue;
                 List<int> recipeIDs = GetRecipeIDList(ddlSearchBy.SelectedValue.Replace(" ", ""), ddlSelectedSearchBy.SelectedValue);
                 int count = recipeIDs.Count;
 

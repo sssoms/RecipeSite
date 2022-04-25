@@ -12,7 +12,7 @@ namespace RecipeSite
 {
     public partial class HomePage : System.Web.UI.Page
     {
-        bool loggedin = true;
+        bool loggedin = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {

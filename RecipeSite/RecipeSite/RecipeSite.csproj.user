@@ -8,8 +8,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
+    <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>

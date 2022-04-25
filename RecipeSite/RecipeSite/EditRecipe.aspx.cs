@@ -22,7 +22,7 @@ namespace RecipeSite
         int userID, imgSize, recipeID;
         string fileExtension, imgName;
         byte[] imgData;
-        bool loggedin = true;
+        bool loggedin = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {

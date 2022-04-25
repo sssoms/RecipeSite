@@ -50,46 +50,6 @@ namespace RecipeSite
             {
                 lblError.Text = "Your answer doesn't match our data.";
             }
-            /*
-            try
-            {
-
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_ValidateSecurityAnswer";
-                objCommand.Parameters.AddWithValue("@UserID", userID);
-                DataSet myDS = objDB.GetDataSet(objCommand);
-
-                string str = "SecurityAnswer" + rndNum;
-                string securityAnswer = (String)myDS.Tables[0].Rows[0][str];
-
-                if (securityAnswer == txtSecurityAnswer.Text)
-                {
-                    lblResetPassword.Visible = false;
-                    
-                    lblSecurityQuestion.Visible = false;
-                    txtSecurityAnswer.Visible = false;
-                    btnVerify.Visible = false;
-                    
-                    lblResetPassword.Visible = true;
-                    txtPassword.Visible = true;
-                    btnReset.Visible = true;
-                }
-                else
-                {
-                    lblError.Text = "Your answer doesn't match our data.";
-                }
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                lblError.Text = ex.ToString();//"Your answer doesn't match our data.";
-            }
-            catch (Exception ex)
-            {
-                lblError.Text = ex.ToString();
-            }*/
         }
 
         protected void btnReset_Click(object sender, EventArgs e)

@@ -147,7 +147,6 @@ C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\roslyn\vbc.exe.c
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\roslyn\vbc.rsp
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\roslyn\VBCSCompiler.exe
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\RecipeSiteLibrary.dll
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\Utilities.dll
 C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\RecipeSiteLibrary.pdb
@@ -196,4 +195,3 @@ C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.csproj.CopyComplete
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.dll
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSite\RecipeSite\obj\Debug\RecipeSite.pdb
-C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSite\bin\AjaxControlToolkit.dll
