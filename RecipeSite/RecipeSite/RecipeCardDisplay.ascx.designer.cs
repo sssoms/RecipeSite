@@ -15,6 +15,15 @@ namespace RecipeSite
     {
 
         /// <summary>
+        /// ScriptManagerProxy1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
+
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -78,13 +87,13 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Label lblUserSavedNum;
 
         /// <summary>
-        /// lblStarRating control.
+        /// Rating1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStarRating;
+        protected global::AjaxControlToolkit.Rating Rating1;
 
         /// <summary>
         /// btnDetails control.

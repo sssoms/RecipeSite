@@ -61,7 +61,7 @@ namespace RecipeSite
                 lblCookingMethod.Text = recipe.CookingMethod;
                 lblFoodCategory.Text = recipe.FoodCategory;
                 lblUserSavedNum.Text = recipe.UserSavedNum.ToString();
-                lblStarRating.Text = recipe.AvgStarRating.ToString();
+                Rating1.CurrentRating = Convert.ToInt32(Math.Ceiling(recipe.AvgStarRating));
             }
             else 
                 lblName.Text = "no record";

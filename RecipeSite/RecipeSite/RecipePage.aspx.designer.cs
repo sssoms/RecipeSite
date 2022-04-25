@@ -15,6 +15,15 @@ namespace RecipeSite
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// lblRecipeName control.
         /// </summary>
         /// <remarks>
@@ -168,13 +177,40 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Label lblInstructions;
 
         /// <summary>
-        /// txtReviewSection control.
+        /// UpdatePanelReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReviewSection;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelReview;
+
+        /// <summary>
+        /// txtReviewTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtReviewTitle;
+
+        /// <summary>
+        /// Rating1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating Rating1;
+
+        /// <summary>
+        /// txtReviewText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtReviewText;
 
         /// <summary>
         /// btnSubmitReview control.
@@ -186,12 +222,12 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Button btnSubmitReview;
 
         /// <summary>
-        /// lblDisplay control.
+        /// lblReviewError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDisplay;
+        protected global::System.Web.UI.WebControls.Label lblReviewError;
     }
 }

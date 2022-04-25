@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\OneDrive - Temple University\OWLbox\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,10 +75,14 @@
     <Content Include="FavoritesPage.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Images\Avatar.png" />
+    <Content Include="Images\emptyStarIcon.png" />
+    <Content Include="Images\emptyStarSm.png" />
     <Content Include="Images\heartIcon.png" />
     <Content Include="Images\NoImage.jpeg" />
     <Content Include="default.aspx" />
     <Content Include="Images\personalPageIcon.png" />
+    <Content Include="Images\starIcon.png" />
+    <Content Include="Images\starSm.png" />
     <Content Include="MyIngredientsListPage.aspx" />
     <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
@@ -96,15 +104,15 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\SearchDDLSvc\Reference.map">
+    <Content Include="Web References\SearchDDLSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <None Include="Web References\SearchDDLSvc\SearchDDL.disco" />
-    <None Include="Web References\SecurityQuestionSvc\Reference.map">
+    <Content Include="Web References\SecurityQuestionSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <None Include="Web References\SecurityQuestionSvc\SecurityQuestion.disco" />
     <Content Include="Web.config" />
     <Content Include="ReviewCardDisplay.ascx" />

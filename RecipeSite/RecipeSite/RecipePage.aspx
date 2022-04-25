@@ -1,11 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/RecipeSite.Master" AutoEventWireup="true" CodeBehind="RecipePage.aspx.cs" Inherits="RecipeSite.RecipePage" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .emptypng { 
+             background-image: url(Images/emptyStarIcon.png); 
+             width: 45px; 
+             height: 45px; 
+        }
+        .starpng { 
+             background-image: url(Images/starIcon.png); 
+             width: 45px; 
+             height: 45px; 
+        }
+        .doneStarpng { 
+             background-image: url(Images/starIcon.png); 
+             width: 45px; 
+             height: 45px; 
+        }
+    </style>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
-        <asp:Label ID="lblRecipeName" CssClass="recipeDisplayName" runat="server"></asp:Label>
-        <div style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px; width: 200px;">
+        <asp:Label ID="lblRecipeName" CssClass="recipeDisplayName" runat="server" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        <div class="container" style="line-height: 200%;">
             <asp:Image ID="RecipeImage" CssClass="imgRecipe" runat="server" Width="200px" />
         </div>
         <br />
@@ -39,19 +59,28 @@
         </h3>
         <asp:Label runat="server" ID="lblInstructions" Text="Instructions"></asp:Label>
     </div>
-    <div id="ReviewSection" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
-        <div id="Review">
-            <h2>Review
-            </h2>
-            <asp:TextBox runat="server" ID="txtReviewSection" TextMode="MultiLine" Rows="10" Width="100%"></asp:TextBox>
-            <br />
+    <asp:UpdatePanel ID="UpdatePanelReview" runat="server">
+        <ContentTemplate>
+            <div id="ReviewSection" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
+                <div id="Review">
+                    <h2>Review
+                    </h2>
+                    Title: <asp:TextBox CssClass="txtStyle" ID="txtReviewTitle" runat="server" Width="250px"></asp:TextBox>
+                    <div>
+                        <ajaxToolkit:Rating ID="Rating1" runat="server" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptypng" FilledStarCssClass="starpng"
+                                            StarCssClass="starpng" WaitingStarCssClass="doneStarpng">
+                        </ajaxToolkit:Rating> <br />
+                    </div>
+                    <asp:TextBox CssClass="txtStyle" runat="server" ID="txtReviewText" TextMode="MultiLine" Rows="10" Width="100%" Font-Names="Noto Sans"></asp:TextBox>
+                    <br />
 
-            <asp:Button runat="server" ID="btnSubmitReview" Text="Submit Review" />
-        </div>
-        <div id="PastReviews" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
+                    <asp:Button runat="server" ID="btnSubmitReview" Text="Submit Review" OnClick="btnSubmitReview_Click" />
+                    <asp:Label ID="lblReviewError" runat="server" ForeColor="Red"></asp:Label>
+                </div>
+            </div>
 
-            <asp:Label ID="lblDisplay" runat="server"></asp:Label>
-
-        </div>
-    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

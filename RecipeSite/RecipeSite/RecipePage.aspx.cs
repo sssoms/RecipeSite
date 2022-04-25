@@ -10,6 +10,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using Utilities;
+using System.Data;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace RecipeSite
 {
@@ -31,8 +33,8 @@ namespace RecipeSite
                 Response.Redirect("default.aspx");
             }
 
-            userID = Convert.ToInt32(Session["UserID"]);
-            recipeID = Convert.ToInt32(Request.QueryString["ID"]);
+            userID = 1; // Convert.ToInt32(Session["UserID"]);
+            recipeID = 3;//Convert.ToInt32(Request.QueryString["ID"]);
             GetRecipeData();
             LoadReviews();
 
@@ -110,29 +112,104 @@ namespace RecipeSite
             string numberedInst = "" + num + ". " + inst + "<br/>";
             return numberedInst;
         }
+
+        protected void btnSubmitReview_Click(object sender, EventArgs e)
+        {
+            CreateNewReview();
+        }
+
+        
         public void LoadReviews()
         {
-            DBConnect objDB = new DBConnect();
-            int count = 0;
-            objDB.GetDataSet("SELECT Review FROM TP_RecipeReview WHERE RecipeID = " + recipeID, out count);
-
-            if(count != 0)
+            try
             {
-                for (int recordNumber = 0; recordNumber < count; recordNumber++)
+                List<int> reviewIDs = GetReviewIDList(recipeID);
+                int count = reviewIDs.Count;
+
+                for (int recordNum = 0; recordNum < count; recordNum++)
                 {
                     ReviewCardDisplay ctrl = (ReviewCardDisplay)LoadControl("ReviewCardDisplay.ascx");
 
+                    ctrl.ReviewID = Convert.ToInt32(reviewIDs[recordNum]);
                     ctrl.DataBind();
 
-                    Page.Master.FindControl("PastReviews").Controls.Add(ctrl);
+                    Page.Master.FindControl("ContentPlaceHolder2").Controls.Add(ctrl);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                lblDisplay.Text = "This recipe does not have any reviews";
-            }
 
-            
+            }
+        }
+        public List<int> GetReviewIDList(int recipeID)
+        {
+            List<int> reviewIDList = new List<int>();
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet myDS;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetReviewIDsByRecipeID";
+            objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
+
+            myDS = objDB.GetDataSet(objCommand);
+            int count = myDS.Tables[0].Rows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                reviewIDList.Add(Convert.ToInt32(myDS.Tables[0].Rows[i]["RecipeID"]));
+            }
+            return reviewIDList;
+        }
+
+        public void CreateNewReview()
+        {
+            try
+            {
+                Review review = new Review();
+                review.UserID = userID;
+                review.Title = txtReviewTitle.Text;
+                review.Text = txtReviewText.Text;
+                review.StarRating = Rating1.CurrentRating;
+
+                // serialize the Review object
+                BinaryFormatter sr = new BinaryFormatter();
+                MemoryStream ms = new MemoryStream();
+                Byte[] reviewBA;
+                sr.Serialize(ms, review);
+                reviewBA = ms.ToArray();
+
+                // insert new review in the database
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_CreateNewReview";
+
+                objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
+                objCommand.Parameters.AddWithValue("@theReview", reviewBA);
+
+                int result = objDB.DoUpdate(objCommand);
+
+                // if successfully uploaded, disable review section
+                if (result == 1)
+                {
+                    Rating1.ReadOnly = true;
+                    txtReviewTitle.Enabled = false;
+                    txtReviewText.Enabled = false;
+                    lblReviewError.ForeColor = System.Drawing.Color.Black;
+                    btnSubmitReview.Enabled = false;
+                    lblReviewError.Text = "Your review has been successfully submitted!";
+                }
+                else
+                {
+                    lblReviewError.Text = "Your review has not been submitted. Please try again later.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblReviewError.Text = ex.ToString();
+            }
         }
     }
 }

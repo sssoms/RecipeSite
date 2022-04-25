@@ -19,7 +19,7 @@ namespace RecipeSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            userID = 1; //Convert.ToInt32(Request.QueryString["ID"]);
+            userID = 2; //Convert.ToInt32(Request.QueryString["ID"]);
             if (!IsPostBack)
             {
                 // randomly select one security question out of 3 questions

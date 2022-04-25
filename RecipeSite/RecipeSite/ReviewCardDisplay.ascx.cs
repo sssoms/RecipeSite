@@ -7,23 +7,25 @@ using System.Web.UI.WebControls;
 using Utilities;
 using System.Data;
 using System.Data.SqlClient;
+using RecipeSiteLibrary;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 
 namespace RecipeSite
 {
     public partial class ReviewCardDisplay : System.Web.UI.UserControl
     {
-        //RecipeSVC.RecipeSOAP pxy = new RecipeSVC.RecipeSOAP();
-        int recipeID;
+        int reviewID;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        public int RecipeID
+        public int ReviewID
         {
-            get { return recipeID; }
-            set { recipeID = value; }
+            get { return reviewID; }
+            set { reviewID = value; }
         }
 
         public override void DataBind()
@@ -32,21 +34,23 @@ namespace RecipeSite
             SqlCommand objCommand = new SqlCommand();
 
             objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GetReviews";
-            objCommand.Parameters.AddWithValue("@recipe", recipeID);
+            objCommand.CommandText = "TP_GetReviewByReviewID";
+            objCommand.Parameters.AddWithValue("@reviewID", reviewID);
 
-            DataSet ds = objDB.GetDataSetUsingCmdObj(objCommand);
-            if (ds != null)
+            DataSet reviewDS = objDB.GetDataSet(objCommand);
+
+            if (reviewDS != null)
             {
+                // deserialize the binary data to reconstruct the Review object
+                Byte[] reviewBA = (Byte[])reviewDS.Tables[0].Rows[0]["theReview"];
+                BinaryFormatter deSr = new BinaryFormatter();
+                MemoryStream ms = new MemoryStream(reviewBA);
+                Review review = (Review)deSr.Deserialize(ms);
 
-                lblReviewTitle.Text = (string)ds.Tables[0].Rows[0]["ReviewTitle"];
-                lblReviewUsername.Text = (string)ds.Tables[0].Rows[0]["Username"];
-                lblReviewText.Text = (string)ds.Tables[0].Rows[0]["Review"];
-                imgRecipe.ImageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])ds.Tables[0].Rows[0]["Picture"]);
-
+                lblReviewTitle.Text = review.Title;
+                lblReviewText.Text = review.Text;
+                Rating1.CurrentRating = review.StarRating;
             }
-
-
         }
     }
 }

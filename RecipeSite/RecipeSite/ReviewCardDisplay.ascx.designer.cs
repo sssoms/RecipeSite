@@ -15,6 +15,15 @@ namespace RecipeSite
     {
 
         /// <summary>
+        /// ScriptManagerProxy1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
+
+        /// <summary>
         /// lblReviewTitle control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Label lblReviewTitle;
 
         /// <summary>
-        /// lblReviewUsername control.
+        /// Rating1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReviewUsername;
+        protected global::AjaxControlToolkit.Rating Rating1;
 
         /// <summary>
         /// lblReviewText control.
