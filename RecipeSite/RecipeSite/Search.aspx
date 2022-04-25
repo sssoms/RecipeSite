@@ -28,7 +28,7 @@
                                 <asp:Label ID="lblSelectedSearchBy" runat="server" Text=""></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlSelectedSearchBy" runat="server" Visible="False"></asp:DropDownList>
                             </td>
                         </tr>
                     </table>

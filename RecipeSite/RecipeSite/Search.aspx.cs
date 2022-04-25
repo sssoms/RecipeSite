@@ -7,11 +7,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
+using System.IO;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace RecipeSite
 {
     public partial class Search : System.Web.UI.Page
     {
+        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        String webApiURL = "http://localhost:59328/api/recipes/";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -31,14 +37,14 @@ namespace RecipeSite
                 {
                     lblSelectedSearchBy.Text = ddlSearchBy.SelectedValue;
                     ddlSelectedSearchBy.Visible = true;
+
+                    SearchDDLSvc.SearchDDL pxy = new SearchDDLSvc.SearchDDL();
+                    string[] ddlItems = pxy.GetDDLItems(ddlSearchBy.SelectedValue);
+
+                    ddlSelectedSearchBy.DataSource = ddlItems;
+                    ddlSelectedSearchBy.DataBind();
                 }
 
-                DataSet ddlDS = GetSelectedSearchByDataSet(ddlSearchBy.SelectedValue);
-
-                ddlSelectedSearchBy.DataSource = ddlDS.Tables[0];
-                ddlSelectedSearchBy.DataValueField = ddlDS.Tables[0].Columns[0].ToString();
-                ddlSelectedSearchBy.DataTextField = ddlDS.Tables[0].Columns[0].ToString();
-                ddlSelectedSearchBy.DataBind();
             }
             catch (Exception ex)
             {
@@ -51,8 +57,8 @@ namespace RecipeSite
             try
             {
                 //lblSelectedSearchBy.Text = ddlSearchBy.SelectedValue;
-                DataSet recipeDS = GetRecipeDataSet(ddlSearchBy.SelectedValue, ddlSelectedSearchBy.SelectedValue);
-                int count = recipeDS.Tables[0].Rows.Count;
+                List<int> recipeIDs = GetRecipeIDList(ddlSearchBy.SelectedValue.Replace(" ", ""), ddlSelectedSearchBy.SelectedValue);
+                int count = recipeIDs.Count;
 
                 for (int recordNum = 0; recordNum < count; recordNum++)
                 {
@@ -60,7 +66,7 @@ namespace RecipeSite
                     RecipeCardDisplay ctrl = (RecipeCardDisplay)LoadControl("RecipeCardDisplay.ascx");
 
                     //set proterties for the RecipeCardDisplay object
-                    ctrl.RecipeID = Convert.ToInt32(recipeDS.Tables[0].Rows[recordNum]["RecipeID"]);
+                    ctrl.RecipeID = Convert.ToInt32(recipeIDs[recordNum]);
                     ctrl.DataBind();
 
                     Page.Master.FindControl("ContentPlaceHolder1").Controls.Add(ctrl);
@@ -72,72 +78,26 @@ namespace RecipeSite
             }
         }
 
-        //get dataset of recipes filtered with selected searchby value
-        public DataSet GetRecipeDataSet (string selectedSearchBy, string selectedValue)
+
+        //get a list of recipeIDs that are filtered with selected searchby value
+        public List<int> GetRecipeIDList(string searchBy, string selectedValue)
         {
-            
-            try
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                string str = selectedSearchBy.Replace(" ", "");
-                DataSet myDS;
-                
-                objCommand.CommandText = "TP_GetRecipeIDBy" + str;
-                objCommand.Parameters.AddWithValue("@SelectedValue", selectedValue);
-                myDS = objDB.GetDataSet(objCommand);
-                
-                return myDS; 
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
+            String url = webApiURL + "GetRecipeIDsBySearch/" + searchBy + "/" + selectedValue;
 
-            
-        }
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
 
-        //get dataset to bind to ddlSelectedSearchBy depending on what is selected on ddlSearchBy
-        public DataSet GetSelectedSearchByDataSet(string selectedValue)
-        {
-            if (selectedValue == "Select")
-            {
-                return null;
-            }
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+            String data = reader.ReadToEnd();
+            reader.Close();
+            response.Close();
 
-            try
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                DataSet myDS;
+            // deserialize a JSON string into a list of RecipeIDs
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            List<int> recipeIDs = js.Deserialize<List<int>>(data);
 
-                switch (selectedValue)
-                {
-                    case "Main Ingredient":
-                        objCommand.CommandText = "TP_SearchByMainIngredient";
-                        myDS = objDB.GetDataSet(objCommand);
-                        break;
-                    case "Cooking Method":
-                        objCommand.CommandText = "TP_SearchByCookingMethod";
-                        myDS = objDB.GetDataSet(objCommand);
-                        break;
-                    case "Food Category":
-                        objCommand.CommandText = "TP_SearchByFoodCategories";
-                        myDS = objDB.GetDataSet(objCommand);
-                        break;
-                    default:
-                        myDS = null;
-                        break;
-                }
-
-                return myDS;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return recipeIDs;
         }
 
 

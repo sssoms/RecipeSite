@@ -16,6 +16,8 @@ namespace RecipeSite
 {
     public partial class MyRecipes : System.Web.UI.Page
     {
+        //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
+        String webApiURL = "http://localhost:59328/api/recipes/";
         int userID;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -40,20 +42,6 @@ namespace RecipeSite
 
                     Page.Master.FindControl("ContentPlaceHolder1").Controls.Add(ctrl);
                 }
-
-                /*
-                DataSet myRecipeDS = GetRecipeIDDataSet(userID);
-                int count = myRecipeDS.Tables[0].Rows.Count;
-
-                for (int recordNum = 0; recordNum <count; recordNum++)
-                {
-                    RecipeCardDisplay ctrl = (RecipeCardDisplay)LoadControl("RecipeCardDisplay.ascx");
-
-                    ctrl.RecipeID = Convert.ToInt32(myRecipeDS.Tables[0].Rows[recordNum]["RecipeID"]);
-                    ctrl.DataBind();
-
-                    Page.Master.FindControl("ContentPlaceHolder1").Controls.Add(ctrl);
-                }*/
             }
             catch (Exception ex)
             {
@@ -63,7 +51,7 @@ namespace RecipeSite
 
         public List<int> GetRecipeIDList(int userID)
         {
-            String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeIDsByUserID/" + userID;
+            String url = webApiURL + "GetRecipeIDsByUserID/" + userID;
 
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -80,46 +68,5 @@ namespace RecipeSite
 
             return recipeIDs;
         }
-
-        /*
-        //get RecipeID dataset by UserID
-        public DataSet GetRecipeIDDataSet(int userID)
-        {
-            String url = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/GetRecipeByID/" + recipeID;
-
-            WebRequest request = WebRequest.Create(url);
-            WebResponse response = request.GetResponse();
-
-            Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream);
-            String data = reader.ReadToEnd();
-            reader.Close();
-            response.Close();
-
-            // deserialize a JSON string into a Recipe object
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            Recipe recipe = js.Deserialize<Recipe>(data);
-
-            
-            try
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                DataSet myDS;
-
-                objCommand.CommandText = "TP_GetRecipeIDByUserID";
-                objCommand.Parameters.AddWithValue("@UserID", userID);
-                myDS = objDB.GetDataSet(objCommand);
-
-                return myDS;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-            
-
-        }*/
     }
 }

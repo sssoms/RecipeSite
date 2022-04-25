@@ -132,6 +132,31 @@ namespace RecipeWepAPI.Controllers
             return recipeIDList;
         }
 
+        // this method receives a search option string and the selected value string and returns an arraylist of recipeID that fits the search
+        [HttpGet("GetRecipeIDsBySearch/{searchBy}/{selectedValue}")]
+        public List<int> GetRecipeIDsBySearch(string searchBy, string selectedValue)
+        {
+            List<int> recipeIDs = new List<int>();
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            string str = searchBy.Replace(" ", "");
+            DataSet myDS;
+
+            objCommand.CommandText = "TP_GetRecipeIDBy" + str;
+            objCommand.Parameters.AddWithValue("@SelectedValue", selectedValue);
+            myDS = objDB.GetDataSet(objCommand);
+            int count = myDS.Tables[0].Rows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                recipeIDs.Add(Convert.ToInt32(myDS.Tables[0].Rows[i]["RecipeID"]));
+            }
+            return recipeIDs;
+        }
+
+
         // this method receives an UserID and a Recipe object and insert a new recipe to database
         // then returns the number of rows succesfully inserted (-1 if error occurred)
         [HttpPost("AddRecipe")]

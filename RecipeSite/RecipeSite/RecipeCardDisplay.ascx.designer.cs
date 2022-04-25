@@ -60,6 +60,33 @@ namespace RecipeSite
         protected global::System.Web.UI.WebControls.Label lblFoodCategory;
 
         /// <summary>
+        /// imgUserSavedNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgUserSavedNum;
+
+        /// <summary>
+        /// lblUserSavedNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserSavedNum;
+
+        /// <summary>
+        /// lblStarRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStarRating;
+
+        /// <summary>
         /// btnDetails control.
         /// </summary>
         /// <remarks>

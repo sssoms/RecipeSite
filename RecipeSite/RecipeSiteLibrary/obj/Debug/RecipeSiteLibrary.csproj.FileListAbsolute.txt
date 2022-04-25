@@ -15,3 +15,9 @@ C:\Users\My PC\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibra
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.csproj.CopyComplete
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.dll
 C:\Users\My PC\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\bin\Debug\RecipeSiteLibrary.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\bin\Debug\RecipeSiteLibrary.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.csproj.AssemblyReference.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.csproj.CoreCompileInputs.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\RecipeSiteLibrary\obj\Debug\RecipeSiteLibrary.pdb

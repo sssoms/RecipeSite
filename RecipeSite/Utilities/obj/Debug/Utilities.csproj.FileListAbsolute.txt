@@ -21,3 +21,9 @@ C:\Users\My PC\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.CoreCo
 C:\Users\My PC\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.CopyComplete
 C:\Users\My PC\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.dll
 C:\Users\My PC\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\bin\Debug\Utilities.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\bin\Debug\Utilities.pdb
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.dll
+C:\Users\loaner\Git\3342TP\RecipeSite\RecipeSite\Utilities\obj\Debug\Utilities.pdb

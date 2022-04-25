@@ -31,6 +31,11 @@
             </td>
         </tr>
     </table>
+    <asp:Image ID="imgUserSavedNum" runat="server" Height="20px" ImageUrl="~/Images/heartIcon.png" />
+    <asp:Label ID="lblUserSavedNum" runat="server"></asp:Label>
+&nbsp;&nbsp;
+    <asp:Label ID="lblStarRating" runat="server"></asp:Label>
+    <br />
     <asp:Button ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" /><br /><br />
 </div>
 

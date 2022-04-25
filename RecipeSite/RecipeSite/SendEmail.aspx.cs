@@ -40,11 +40,13 @@ namespace RecipeSite
                     {
                         try
                         {
+                            int userID = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserID"]);
                             MailMessage mail = new MailMessage();
                             mail.From = new MailAddress("no-reply@recipesite.com");
                             mail.To.Add(new MailAddress(txtEmail.Text));
                             mail.Subject = "RECIPEASY Reset Password";
-                            mail.Body = "";
+                            mail.Body = "<a href=\"http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/Project4/ResetPassword.aspx?ID=" + userID
+                                + "\">Click here to reset your password for RECIPEASY</a>";
                             mail.IsBodyHtml = true;
                             mail.Priority = MailPriority.Normal;
 
@@ -56,7 +58,7 @@ namespace RecipeSite
                             lblError.Text = ex.ToString();
                         }
 
-                        Response.Redirect("LogIn.aspx");
+                        Response.Redirect("default.aspx");
                     }
                 }
                 catch (IndexOutOfRangeException)
