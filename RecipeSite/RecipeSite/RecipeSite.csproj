@@ -70,8 +70,11 @@
     <Content Include="EditRecipe.aspx" />
     <Content Include="FavoritesPage.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Images\Avatar.png" />
+    <Content Include="Images\heartIcon.png" />
     <Content Include="Images\NoImage.jpeg" />
     <Content Include="default.aspx" />
+    <Content Include="Images\personalPageIcon.png" />
     <Content Include="MyIngredientsListPage.aspx" />
     <Content Include="MyRecipes.aspx" />
     <Content Include="RecipeCardDisplay.ascx" />
