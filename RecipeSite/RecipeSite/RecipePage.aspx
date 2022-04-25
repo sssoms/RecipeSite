@@ -41,7 +41,7 @@
     </div>
     <div id="ReviewSection" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
         <div id="Review">
-            <h2>Review (might add option to add picture)
+            <h2>Review
             </h2>
             <asp:TextBox runat="server" ID="txtReviewSection" TextMode="MultiLine" Rows="10" Width="100%"></asp:TextBox>
             <br />
@@ -49,7 +49,9 @@
             <asp:Button runat="server" ID="btnSubmitReview" Text="Submit Review" />
         </div>
         <div id="PastReviews" style="border-color: black; border-style: solid; padding: 1em; line-height: 200%; margin-bottom: 1px;">
-            area to display reviews from other users
+
+            <asp:Label ID="lblDisplay" runat="server"></asp:Label>
+
         </div>
     </div>
 </asp:Content>

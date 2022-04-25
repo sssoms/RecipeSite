@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using Utilities;
 
 namespace RecipeSite
 {
@@ -22,6 +24,7 @@ namespace RecipeSite
             userID = 1;//Convert.ToInt32(Session["UserID"]);
             recipeID = Convert.ToInt32(Request.QueryString["ID"]);
             GetRecipeData();
+            LoadReviews();
 
         }
 
@@ -96,6 +99,30 @@ namespace RecipeSite
         {
             string numberedInst = "" + num + ". " + inst + "<br/>";
             return numberedInst;
+        }
+        public void LoadReviews()
+        {
+            DBConnect objDB = new DBConnect();
+            int count = 0;
+            objDB.GetDataSet("SELECT Review FROM TP_RecipeReview WHERE RecipeID = " + recipeID, out count);
+
+            if(count != 0)
+            {
+                for (int recordNumber = 0; recordNumber < count; recordNumber++)
+                {
+                    ReviewCardDisplay ctrl = (ReviewCardDisplay)LoadControl("ReviewCardDisplay.ascx");
+
+                    ctrl.DataBind();
+
+                    Page.Master.FindControl("PastReviews").Controls.Add(ctrl);
+                }
+            }
+            else
+            {
+                lblDisplay.Text = "This recipe does not have any reviews";
+            }
+
+            
         }
     }
 }

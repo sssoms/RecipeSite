@@ -31,7 +31,7 @@ namespace RecipeSite
                 objCommand.CommandText = "TP_CreateAccount";
 
                 objCommand.Parameters.AddWithValue("@Username", txtUsername.Text);
-                objCommand.Parameters.AddWithValue("@Password", txtPassword.Text);
+                objCommand.Parameters.AddWithValue("@Password", EncryptString(txtPassword.Text));
                 objCommand.Parameters.AddWithValue("@Email", txtEmail.Text);
                 objCommand.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
                 objCommand.Parameters.AddWithValue("@LastName", txtLastName.Text);
@@ -50,6 +50,12 @@ namespace RecipeSite
                 Response.Redirect("LogIn.aspx");
             }
             
+        }
+        public string EncryptString(string strEncrypted)
+        {
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
         }
     }
 }
