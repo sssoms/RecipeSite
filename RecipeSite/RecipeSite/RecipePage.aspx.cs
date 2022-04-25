@@ -166,44 +166,51 @@ namespace RecipeSite
         {
             try
             {
-                Review review = new Review();
-                review.UserID = userID;
-                review.Title = txtReviewTitle.Text;
-                review.Text = txtReviewText.Text;
-                review.StarRating = Rating1.CurrentRating;
-
-                // serialize the Review object
-                BinaryFormatter sr = new BinaryFormatter();
-                MemoryStream ms = new MemoryStream();
-                Byte[] reviewBA;
-                sr.Serialize(ms, review);
-                reviewBA = ms.ToArray();
-
-                // insert new review in the database
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_CreateNewReview";
-
-                objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
-                objCommand.Parameters.AddWithValue("@theReview", reviewBA);
-
-                int result = objDB.DoUpdate(objCommand);
-
-                // if successfully uploaded, disable review section
-                if (result == 1)
+                if (txtReviewTitle.Text == "" || txtReviewText.Text == "")
                 {
-                    Rating1.ReadOnly = true;
-                    txtReviewTitle.Enabled = false;
-                    txtReviewText.Enabled = false;
-                    lblReviewError.ForeColor = System.Drawing.Color.Black;
-                    btnSubmitReview.Enabled = false;
-                    lblReviewError.Text = "Your review has been successfully submitted!";
+                    lblReviewError.Text = "Please fill out everything.";
                 }
                 else
                 {
-                    lblReviewError.Text = "Your review has not been submitted. Please try again later.";
+                    Review review = new Review();
+                    review.UserID = userID;
+                    review.Title = txtReviewTitle.Text;
+                    review.Text = txtReviewText.Text;
+                    review.StarRating = Rating1.CurrentRating;
+
+                    // serialize the Review object
+                    BinaryFormatter sr = new BinaryFormatter();
+                    MemoryStream ms = new MemoryStream();
+                    Byte[] reviewBA;
+                    sr.Serialize(ms, review);
+                    reviewBA = ms.ToArray();
+
+                    // insert new review in the database
+                    DBConnect objDB = new DBConnect();
+                    SqlCommand objCommand = new SqlCommand();
+
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_CreateNewReview";
+
+                    objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
+                    objCommand.Parameters.AddWithValue("@theReview", reviewBA);
+
+                    int result = objDB.DoUpdate(objCommand);
+
+                    // if successfully uploaded, disable review section
+                    if (result == 1)
+                    {
+                        Rating1.ReadOnly = true;
+                        txtReviewTitle.Enabled = false;
+                        txtReviewText.Enabled = false;
+                        lblReviewError.ForeColor = System.Drawing.Color.Black;
+                        btnSubmitReview.Enabled = false;
+                        lblReviewError.Text = "Your review has been successfully submitted!";
+                    }
+                    else
+                    {
+                        lblReviewError.Text = "Your review has not been submitted. Please try again later.";
+                    }
                 }
             }
             catch (Exception ex)
