@@ -1,6 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RecipeCardDisplay.ascx.cs" Inherits="RecipeSite.RecipeCardDisplay" %>
+<style>
+        table{
+            margin:auto;
+        }
+        td{
+            padding: 0.7rem;
+            text-align: left;
+        }
+        .value{
+            font-weight: bold;
+        }
+
+</style>
 <div class ="recipeCardDisplayContainer">
-    <asp:Label ID="lblName" CssClass="recipeDisplayName" runat="server"></asp:Label>
+    <asp:Label ID="lblName" CssClass="recipeDisplayName" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
     <br />
     <div class="imgContainer">
         <asp:Image CssClass="imgRecipe" ID="imgRecipe" runat="server" />
@@ -10,7 +23,7 @@
             <td>
                 Main Ingredient
             </td>
-            <td>
+            <td class="value">
                 <asp:Label ID="lblMainIngredient" runat="server"></asp:Label>
             </td>
         </tr>
@@ -18,7 +31,7 @@
             <td>
                 Cooking Method
             </td>
-            <td>
+            <td class="value">
                 <asp:Label ID="lblCookingMethod" runat="server"></asp:Label>
             </td>
         </tr>
@@ -26,7 +39,7 @@
             <td>
                 Food Category
             </td>
-            <td>
+            <td class="value">
                 <asp:Label ID="lblFoodCategory" runat="server"></asp:Label>
             </td>
         </tr>
@@ -36,6 +49,6 @@
 &nbsp;&nbsp;
     <asp:Label ID="lblStarRating" runat="server"></asp:Label>
     <br />
-    <asp:Button ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" /><br /><br />
+    <asp:Button CssClass="buttonStyle" ID="btnDetails" runat="server" Text="Click For Details" OnClick="btnDetails_Click" /><br /><br />
 </div>
 

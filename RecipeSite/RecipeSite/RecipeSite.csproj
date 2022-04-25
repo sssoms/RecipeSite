@@ -90,11 +90,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.disco" />
     <Content Include="Web References\SearchDDLSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <None Include="Web References\RecipeSOAPWebAPISvs\RecipeSOAPWebAPI.wsdl" />
+    <Content Include="Web References\RecipeSOAPWebAPISvs\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\SearchDDLSvc\SearchDDL.disco" />
+    <Content Include="Web References\SecurityQuestionSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\SecurityQuestionSvc\SecurityQuestion.disco" />
     <Content Include="Web.config" />
     <Content Include="ReviewCardDisplay.ascx" />
   </ItemGroup>
@@ -214,7 +225,17 @@
     <Compile Include="ReviewCardDisplay.ascx.designer.cs">
       <DependentUpon>ReviewCardDisplay.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\RecipeSOAPWebAPISvs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\SearchDDLSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SecurityQuestionSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -224,6 +245,7 @@
     <None Include="packages.config" />
     <Content Include="RecipeSite.Master" />
     <None Include="Web References\SearchDDLSvc\SearchDDL.wsdl" />
+    <None Include="Web References\SecurityQuestionSvc\SecurityQuestion.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -258,6 +280,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RecipeSite_SearchDDLSvc_SearchDDL</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44303/SecurityQuestion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SecurityQuestionSvc\</RelPath>
+      <UpdateFromURL>https://localhost:44303/SecurityQuestion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RecipeSite_SecurityQuestionSvc_SecurityQuestion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44330/RecipeSOAPWebAPI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RecipeSOAPWebAPISvs\</RelPath>
+      <UpdateFromURL>https://localhost:44330/RecipeSOAPWebAPI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RecipeSite_RecipeSOAPWebAPISvs_RecipeSOAPWebAPI</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

@@ -68,12 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SearchDDL.asmx" />
+    <Content Include="SecurityQuestion.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchDDL.asmx.cs">
       <DependentUpon>SearchDDL.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SecurityQuestion.asmx.cs">
+      <DependentUpon>SecurityQuestion.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

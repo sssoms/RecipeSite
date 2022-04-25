@@ -3,16 +3,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <style>
+        table{
+            margin:auto;
+        }
+        td{
+            padding: 0.7rem;
+            font-weight: bold;
+        }
+        .auto-style1 {
+            width: 650px;
+        }
+    </style>
+    <h1 style="text-align:center;">Edit Your Recipe</h1>
+    <div class="container">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <h2>Add Your Recipe</h2>
         <table>
             <tr>
                 <td>
                     Recipe Name
                 </td>
-                <td>
-                    <asp:TextBox ID="txtRecipeName" runat="server"></asp:TextBox>
+                <td class="auto-style1">
+                    <asp:TextBox CssClass="txtStyle" ID="txtRecipeName" runat="server" Width="250px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="valRecipeName" ControlToValidate ="txtRecipeName" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -20,7 +32,7 @@
                 <td>
                     Upload Picture
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:FileUpload ID="fulRecipeImg" runat="server" Width="188px" />
                     <asp:Label ID="lblImgError" runat="server" Font-Size="Small" ForeColor="Red" Text="*Supported image formats: .jpg, .jpeg" Visible="False"></asp:Label>
                 </td>
@@ -29,7 +41,7 @@
                 <td>
                     Main Ingredient
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:DropDownList ID="ddlMainIngredient" runat="server"></asp:DropDownList>
                 </td>
             </tr>
@@ -37,7 +49,7 @@
                 <td>
                     Cooking Method
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:DropDownList ID="ddlCookingMethod" runat="server"></asp:DropDownList>
                 </td>
             </tr>
@@ -45,7 +57,7 @@
                 <td>
                     Food Category
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:DropDownList ID="ddlFoodCategory" runat="server"></asp:DropDownList>
                 </td>
             </tr>
@@ -53,7 +65,7 @@
                 <td>
                     Servings
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:DropDownList ID="ddlServing" runat="server">
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
@@ -72,7 +84,7 @@
                 <td>
                     Cooking Time
                 </td>
-                <td>
+                <td style="font-weight: normal;" class="auto-style1">
                     <asp:DropDownList ID="ddlCookingTime" runat="server"></asp:DropDownList>
                     min
                 </td>
@@ -82,7 +94,7 @@
                 <td>
                     Ingredients
                 </td>
-                <td>
+                <td class="auto-style1">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:DropDownList ID="ddlIngredient1" runat="server"></asp:DropDownList><br />
@@ -101,22 +113,27 @@
                 <td>
                     Instructions
                 </td>
-                <td>
-                    <asp:TextBox ID="txtInstruction1" runat="server"></asp:TextBox>
+                <td class="auto-style1">
+                    1. <asp:TextBox CssClass="txtStyle" ID="txtInstruction1" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="valInstruction1" ControlToValidate="txtInstruction1" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator><br />
-                    <asp:TextBox ID="txtInstruction2" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction3" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction4" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction5" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction6" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction7" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction8" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction9" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="txtInstruction10" runat="server"></asp:TextBox>
+                    2. <asp:TextBox CssClass="txtStyle" ID="txtInstruction2" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    3. <asp:TextBox CssClass="txtStyle" ID="txtInstruction3" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    4. <asp:TextBox CssClass="txtStyle" ID="txtInstruction4" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    5. <asp:TextBox CssClass="txtStyle" ID="txtInstruction5" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    6. <asp:TextBox CssClass="txtStyle" ID="txtInstruction6" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    7. <asp:TextBox CssClass="txtStyle" ID="txtInstruction7" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    8. <asp:TextBox CssClass="txtStyle" ID="txtInstruction8" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    9.<asp:TextBox CssClass="txtStyle" ID="txtInstruction9" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    10.<asp:TextBox CssClass="txtStyle" ID="txtInstruction10" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button CssClass="buttonStyle" ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                 </td>
             </tr>
         </table>
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+
         <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
     </div>
 </asp:Content>

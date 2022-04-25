@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Utilities;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.Script.Serialization;
 
 namespace RecipeSite
 {
@@ -16,12 +17,18 @@ namespace RecipeSite
         SqlCommand objCommand = new SqlCommand();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // load sequrity questions from the database
+            SecurityQuestionSvc.SecurityQuestion pxy = new SecurityQuestionSvc.SecurityQuestion();
+            string[] sqList = pxy.GetSecurityQuestions();
+            lblSecurityQuestion1.Text = sqList[0];
+            lblSecurityQuestion2.Text = sqList[1];
+            lblSecurityQuestion3.Text = sqList[2];
         }
         // create and add user to database
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "" || txtPassword.Text == "" || txtFirstName.Text == "" ||  txtLastName.Text == "" || txtStreet.Text == "" || txtCity.Text == "" || DropDownListState.SelectedValue == "NN")
+            if(txtUsername.Text == "" || txtPassword.Text == "" || txtFirstName.Text == "" ||  txtLastName.Text == "" || txtStreet.Text == "" || txtCity.Text == "" || DropDownListState.SelectedValue == "NN" 
+                                        || txtSecurityAnswer1.Text == "" || txtSecurityAnswer2.Text == "" || txtSecurityAnswer3.Text == "")
             {
                 lblMessage.Text = "Please completely fill out all the information";
             }
@@ -38,12 +45,12 @@ namespace RecipeSite
                 objCommand.Parameters.AddWithValue("@Street", txtStreet.Text);
                 objCommand.Parameters.AddWithValue("@City", txtCity.Text);
                 objCommand.Parameters.AddWithValue("@State", DropDownListState.SelectedValue);
-                objCommand.Parameters.AddWithValue("@SecurityQuestion1", txtSecurityQuestion1.Text);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion1", lblSecurityQuestion1.Text);
                 objCommand.Parameters.AddWithValue("@SecurityAnswer1", txtSecurityAnswer1.Text);
-                objCommand.Parameters.AddWithValue("@SecurityQuestion2", txtSecurityQuestion2.Text);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion2", lblSecurityQuestion2.Text);
                 objCommand.Parameters.AddWithValue("@SecurityAnswer2", txtSecurityAnswer2.Text);
-                objCommand.Parameters.AddWithValue("@SecurityQuestion3", txtSecurityQuestion3.Text);
-                objCommand.Parameters.AddWithValue("@SecurityAnswer3", txtSecurityQuestion3.Text);
+                objCommand.Parameters.AddWithValue("@SecurityQuestion3", lblSecurityQuestion3.Text);
+                objCommand.Parameters.AddWithValue("@SecurityAnswer3", txtSecurityAnswer3.Text);
 
                 objDB.DoUpdateUsingCmdObj(objCommand);
 

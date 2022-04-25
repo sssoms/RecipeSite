@@ -17,10 +17,18 @@ namespace RecipeSite
     {
         //String webApiURL = "http://cis-iis2.temple.edu/Spring2022/CIS3342_tuf88411/WebAPI/api/Recipes/";
         String webApiURL = "http://localhost:59328/api/recipes/";
+        bool loggedin = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["LoggedIn"] != null)
+                loggedin = (Boolean)Session["LoggedIn"];
+
+            // if not logged in, redirect to log in page
+            if (!loggedin)
+            {
+                Response.Redirect("default.aspx");
+            }
         }
 
         protected void ddlSearchBy_SelectedIndexChanged(object sender, EventArgs e)

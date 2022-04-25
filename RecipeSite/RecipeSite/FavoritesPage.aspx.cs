@@ -14,9 +14,13 @@ namespace RecipeSite
     {
         DBConnect objDB = new DBConnect();
         SqlCommand objCommand = new SqlCommand();
+        bool loggedin = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["LoggedIn"] != null)
+                loggedin = (Boolean)Session["LoggedIn"];
+
+            if (!IsPostBack && loggedin)
             {
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "ShowFavorite";
@@ -25,11 +29,12 @@ namespace RecipeSite
 
                 rptRecipes.DataSource = myDS;
                 rptRecipes.DataBind();
-
-                
-
             }
-
+            // if not logged in, redirect to log in page
+            else if (!loggedin)
+            {
+                Response.Redirect("default.aspx");
+            }
         }
     }
 }

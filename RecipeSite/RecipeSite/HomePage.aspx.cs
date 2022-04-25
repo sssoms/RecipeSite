@@ -12,13 +12,22 @@ namespace RecipeSite
 {
     public partial class HomePage : System.Web.UI.Page
     {
+        bool loggedin = true;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadAllRecipes();
+            if (Session["LoggedIn"] != null)
+                loggedin = (Boolean)Session["LoggedIn"];
 
+            // if not logged in, redirect to log in page
+            if (!loggedin)
+                Response.Redirect("default.aspx");
+            
+            LoadAllRecipes();
 
         }
 
+        // loads all the recipes in database
         public void LoadAllRecipes()
         {
             try

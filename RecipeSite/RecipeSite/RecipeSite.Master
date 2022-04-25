@@ -34,12 +34,14 @@
         .imgContainer {
             width: 15rem;
             margin: auto;
+            margin-top: 2rem;
         }
         .recipeContainer{
             text-align: center;
+            
         }
         .recipeDisplayName{
-
+            margin:1rem;
         }
         .recipeCardDisplayContainer{
             text-align: center;
@@ -47,9 +49,34 @@
             width: 30%;
             margin:auto;
             margin-bottom: 1.5rem;
+            padding: 2rem;
         }
         .recipeTable{
             margin: auto;
+        }
+
+        .buttonStyle {
+            border-style: none;
+            background-color: #222222;
+            color: #ffffff;
+            padding: 8px 16px;
+        }
+
+        .txtStyle {
+            padding: 0.6rem;
+            margin-right: 0;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            padding:3rem;
+        }
+
+        .containerSmall{
+            width:30%;
+            margin:auto;
+            padding:1.5rem;
         }
 </style>
 </head>

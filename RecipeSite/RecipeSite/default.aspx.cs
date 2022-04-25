@@ -65,7 +65,7 @@ namespace RecipeSite
                         }
 
                         //once account is validated, save UserID to session, redirect to HomePage
-                        //Session["LoggedIn"] = true;
+                        Session["LoggedIn"] = true;
                         Session["UserID"] = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserID"]);
                         Response.Redirect("HomePage.aspx");
                     }

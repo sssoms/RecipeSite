@@ -19,12 +19,15 @@ namespace RecipeSite
         int userID, imgSize;
         string fileExtension, imgName;
         byte[] imgData;
+        bool loggedin = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {   
             userID = 1;//Convert.ToInt32(Session["UserID"]);
-            
-            if(!IsPostBack)
+            if (Session["LoggedIn"] != null)
+                loggedin = (Boolean)Session["LoggedIn"];
+
+            if (!IsPostBack && loggedin)
             {
                 ddlCookingTime.DataSource = Enumerable.Range(1, 120).ToList();
                 ddlCookingTime.DataBind();
@@ -40,7 +43,12 @@ namespace RecipeSite
                 BindDDL(ddlIngredient7);
                 BindDDL(ddlIngredient8);
             }
-            
+            // if not logged in, redirect to log in page
+            else if (!loggedin)
+            {
+                Response.Redirect("default.aspx");
+            }
+
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
