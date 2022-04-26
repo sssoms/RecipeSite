@@ -17,9 +17,10 @@ namespace RecipeSite
         bool loggedin = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["LoggedIn"] != null)
                 loggedin = (Boolean)Session["LoggedIn"];
-
+            /*
             if (!IsPostBack && loggedin)
             {
                 objCommand.CommandType = CommandType.StoredProcedure;
@@ -30,8 +31,9 @@ namespace RecipeSite
                 rptIngredients.DataSource = myDS;
                 rptIngredients.DataBind();
             }
+             */
             // if not logged in, redirect to log in page
-            else if (!loggedin)
+            if (!loggedin)
             {
                 Response.Redirect("default.aspx");
             }

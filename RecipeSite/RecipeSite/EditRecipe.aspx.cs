@@ -88,7 +88,7 @@ namespace RecipeSite
             txtRecipeName.Text = recipe.RecipeName;
             ddlMainIngredient.SelectedValue = recipe.MainIngredient;
             ddlCookingMethod.SelectedValue = recipe.CookingMethod;
-            ddlServing.SelectedValue = recipe.FoodCategory;
+            ddlFoodCategory.SelectedValue = recipe.FoodCategory;
             ddlServing.SelectedValue = recipe.Servings.ToString();
             ddlCookingTime.SelectedValue = recipe.CookingTime.ToString();
             txtInstruction1.Text = recipe.Instruction1;

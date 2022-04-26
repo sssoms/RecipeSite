@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 style="text-align:center;">Edit Your Recipe</h1>
+    <h1 style="text-align:center;">My Ingredients</h1>
     <div class="container">
         <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
         <table>
