@@ -115,17 +115,17 @@
                     Instructions
                 </td>
                 <td class="auto-style1" style="padding-right: 1px;">
-                    1. <asp:TextBox CssClass="txtStyle" ID="txtInstruction1" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox>
+                    1. <asp:TextBox CssClass="txtStyle" ID="txtInstruction1" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="valInstruction1" ControlToValidate="txtInstruction1" runat="server" ErrorMessage="* Required" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator><br />
-                    2. <asp:TextBox CssClass="txtStyle" ID="txtInstruction2" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    3. <asp:TextBox CssClass="txtStyle" ID="txtInstruction3" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    4. <asp:TextBox CssClass="txtStyle" ID="txtInstruction4" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    5. <asp:TextBox CssClass="txtStyle" ID="txtInstruction5" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    6. <asp:TextBox CssClass="txtStyle" ID="txtInstruction6" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    7. <asp:TextBox CssClass="txtStyle" ID="txtInstruction7" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    8. <asp:TextBox CssClass="txtStyle" ID="txtInstruction8" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    9. <asp:TextBox CssClass="txtStyle" ID="txtInstruction9" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
-                    10.<asp:TextBox CssClass="txtStyle" ID="txtInstruction10" runat="server" Rows="2" TextMode="MultiLine" Width="500px"></asp:TextBox>
+                    2. <asp:TextBox CssClass="txtStyle" ID="txtInstruction2" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    3. <asp:TextBox CssClass="txtStyle" ID="txtInstruction3" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    4. <asp:TextBox CssClass="txtStyle" ID="txtInstruction4" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    5. <asp:TextBox CssClass="txtStyle" ID="txtInstruction5" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    6. <asp:TextBox CssClass="txtStyle" ID="txtInstruction6" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    7. <asp:TextBox CssClass="txtStyle" ID="txtInstruction7" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    8. <asp:TextBox CssClass="txtStyle" ID="txtInstruction8" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    9. <asp:TextBox CssClass="txtStyle" ID="txtInstruction9" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox><br />
+                    10.<asp:TextBox CssClass="txtStyle" ID="txtInstruction10" runat="server" Rows="2" TextMode="MultiLine" Width="500px" Font-Names="Noto Sans"></asp:TextBox>
                 </td>
             </tr>
             <tr>

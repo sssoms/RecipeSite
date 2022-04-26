@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Utilities;
 
@@ -42,7 +43,7 @@ namespace RecipeWepAPI.Controllers
                 recipe.FoodCategory = (String)myDS.Tables[0].Rows[0]["Category"];
                 recipe.Servings = Convert.ToInt32(myDS.Tables[0].Rows[0]["Servings"]);
                 recipe.CookingTime = Convert.ToInt32(myDS.Tables[0].Rows[0]["CookingTime"]);
-                recipe.Picture = "data:image/png;base64," + Convert.ToBase64String((byte[])myDS.Tables[0].Rows[0]["Picture"]);
+                recipe.Picture = (String)myDS.Tables[0].Rows[0]["Picture"];
                 recipe.UserSavedNum = Convert.ToInt32(myDS.Tables[0].Rows[0]["UserSavedNum"]);
                 recipe.AvgStarRating = float.Parse(myDS.Tables[0].Rows[0]["AvgStarRating"].ToString());
 

@@ -30,15 +30,6 @@
             </tr>
             <tr>
                 <td>
-                    Upload Picture
-                </td>
-                <td class="auto-style1">
-                    <asp:FileUpload ID="fulRecipeImg" runat="server" Width="188px" />
-                    <asp:Label ID="lblImgError" runat="server" Font-Size="Small" ForeColor="Red" Text="*Supported image formats: .jpg, .jpeg" Visible="False"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     Main Ingredient
                 </td>
                 <td class="auto-style1">

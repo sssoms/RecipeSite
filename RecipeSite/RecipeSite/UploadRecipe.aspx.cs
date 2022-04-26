@@ -66,7 +66,7 @@ namespace RecipeSite
         }
 
         // upload new recipe
-        public void UploadRecipeToDatabase()
+        public string UploadRecipeToDatabase()
         {
             string result;
             Recipe newRecipe = new Recipe();
@@ -124,18 +124,18 @@ namespace RecipeSite
 
                 if (data == "1")
                 {
-                    result = "Your new recipe has been uploaded successfully!";
+                    return result = "Your new recipe has been uploaded successfully!";
                 }
                 else if (data == "0")
                 {
-                    result = "Your recipe has not been uploaded.";
+                    return result = "Your recipe has not been uploaded.";
                 }
                 else
-                    result = "Error has occurred. Please try again later.";
+                    return result = "Error has occurred. Please try again later.";
             }
             catch (Exception ex)
             {
-
+                return ex.ToString();
             }
         }
 

@@ -58,7 +58,7 @@ namespace RecipeSite
 
             if (Page.IsValid)
             {
-                string result = UpdateRecipeToDatabase();
+                UpdateRecipeToDatabase();
                 Response.Redirect("MyRecipes.aspx");
             }
             else
@@ -135,78 +135,52 @@ namespace RecipeSite
         }
 
         // update recipe 
-        public string UpdateRecipeToDatabase()
+        public void UpdateRecipeToDatabase()
         {
-            string result;
-            Recipe updatedRecipe = new Recipe();
-
-            updatedRecipe.RecipeID = recipeID;
-            updatedRecipe.RecipeName = txtRecipeName.Text;
-            updatedRecipe.MainIngredient = ddlMainIngredient.SelectedValue;
-            updatedRecipe.CookingMethod = ddlCookingMethod.SelectedValue;
-            updatedRecipe.FoodCategory = ddlFoodCategory.SelectedValue;
-            updatedRecipe.Servings = Convert.ToInt32(ddlServing.SelectedValue);
-            updatedRecipe.CookingTime = Convert.ToInt32(ddlCookingTime.SelectedValue);
-            updatedRecipe.Instruction1 = txtInstruction1.Text;
-            updatedRecipe.Instruction2 = txtInstruction2.Text;
-            updatedRecipe.Instruction3 = txtInstruction3.Text;
-            updatedRecipe.Instruction4 = txtInstruction4.Text;
-            updatedRecipe.Instruction5 = txtInstruction5.Text;
-            updatedRecipe.Instruction6 = txtInstruction6.Text;
-            updatedRecipe.Instruction7 = txtInstruction7.Text;
-            updatedRecipe.Instruction8 = txtInstruction8.Text;
-            updatedRecipe.Instruction9 = txtInstruction9.Text;
-            updatedRecipe.Instruction10 = txtInstruction10.Text;
-            updatedRecipe.Ingredient1 = ddlIngredient1.SelectedValue;
-            updatedRecipe.Ingredient2 = ddlIngredient2.SelectedValue;
-            updatedRecipe.Ingredient3 = ddlIngredient3.SelectedValue;
-            updatedRecipe.Ingredient4 = ddlIngredient4.SelectedValue;
-            updatedRecipe.Ingredient5 = ddlIngredient5.SelectedValue;
-            updatedRecipe.Ingredient6 = ddlIngredient6.SelectedValue;
-            updatedRecipe.Ingredient7 = ddlIngredient7.SelectedValue;
-            updatedRecipe.Ingredient8 = ddlIngredient8.SelectedValue;
-
-            // Serialize a Recipe object into a JSON string
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            String jsonRecipe = js.Serialize(updatedRecipe);
-
-            try 
+            try
             {
-                // send the Recipe objest to the Web API that will be used to update the associated recipe record (based on RecipeID) in the database
-                WebRequest request = WebRequest.Create(webApiURL + "UpdateRecipe/");
-                request.Method = "PUT";
-                request.ContentLength = jsonRecipe.Length;
-                request.ContentType = "application/json";
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
 
-                StreamWriter writer = new StreamWriter(request.GetRequestStream());
-                writer.Write(jsonRecipe);
-                writer.Flush();
-                writer.Close();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_UpdateRecipe";
 
-                WebResponse response = request.GetResponse();
-                Stream dataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(dataStream);
-                String data = reader.ReadToEnd();
-                reader.Close();
-                response.Close();
+                objCommand.Parameters.AddWithValue("@RecipeID", recipeID);
+                objCommand.Parameters.AddWithValue("@RecipeName", txtRecipeName.Text);
+                objCommand.Parameters.AddWithValue("@MainIngredient", ddlMainIngredient.SelectedValue);
+                objCommand.Parameters.AddWithValue("@CookingMethod", ddlCookingMethod.SelectedValue);
+                objCommand.Parameters.AddWithValue("@FoodCategory", ddlFoodCategory.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Servings", ddlServing.SelectedValue);
+                objCommand.Parameters.AddWithValue("@CookingTime", ddlCookingTime.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Instruction1", txtInstruction1.Text);
+                objCommand.Parameters.AddWithValue("@Instruction2", txtInstruction2.Text);
+                objCommand.Parameters.AddWithValue("@Instruction3", txtInstruction3.Text);
+                objCommand.Parameters.AddWithValue("@Instruction4", txtInstruction4.Text);
+                objCommand.Parameters.AddWithValue("@Instruction5", txtInstruction5.Text);
+                objCommand.Parameters.AddWithValue("@Instruction6", txtInstruction6.Text);
+                objCommand.Parameters.AddWithValue("@Instruction7", txtInstruction7.Text);
+                objCommand.Parameters.AddWithValue("@Instruction8", txtInstruction8.Text);
+                objCommand.Parameters.AddWithValue("@Instruction9", txtInstruction9.Text);
+                objCommand.Parameters.AddWithValue("@Instruction10", txtInstruction10.Text);
 
-                if (data == "1")
-                {
-                    return result = "Your recipe has been updated successfully!";
-                }
-                else if (data == "0")
-                {
-                    return result = "Your recipe has not been updated.";
-                }
-                else
-                    return result = "Error has occurred. Please try again later.";
+                objCommand.Parameters.AddWithValue("@Ingredient1", ddlIngredient1.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient2", ddlIngredient2.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient3", ddlIngredient3.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient4", ddlIngredient4.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient5", ddlIngredient5.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient6", ddlIngredient6.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient7", ddlIngredient7.SelectedValue);
+                objCommand.Parameters.AddWithValue("@Ingredient8", ddlIngredient8.SelectedValue);
+
+                int i = objDB.DoUpdate(objCommand);
+                lblError.Text = i.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return ex.ToString() ;
+                lblError.Text = "Error has occurred: " + ex.ToString();
             }
 
-            
+
         }
 
        
