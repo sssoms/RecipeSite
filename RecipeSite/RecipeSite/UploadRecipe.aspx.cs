@@ -56,7 +56,8 @@ namespace RecipeSite
 
             if (Page.IsValid && imgIsValid)
             {
-                UploadRecipeToDatabase();
+                 
+                string result = UploadRecipeToDatabase();
                 Response.Redirect("MyRecipes.aspx");
             }
             else
@@ -135,6 +136,7 @@ namespace RecipeSite
             }
             catch (Exception ex)
             {
+                result = ex.ToString();
                 return ex.ToString();
             }
         }

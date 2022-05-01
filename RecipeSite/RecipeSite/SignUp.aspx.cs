@@ -52,9 +52,9 @@ namespace RecipeSite
                 objCommand.Parameters.AddWithValue("@SecurityQuestion3", lblSecurityQuestion3.Text);
                 objCommand.Parameters.AddWithValue("@SecurityAnswer3", txtSecurityAnswer3.Text);
 
-                objDB.DoUpdateUsingCmdObj(objCommand);
+                int result  = objDB.DoUpdateUsingCmdObj(objCommand);
 
-                Response.Redirect("LogIn.aspx");
+                Response.Redirect("default.aspx");
             }
             
         }
